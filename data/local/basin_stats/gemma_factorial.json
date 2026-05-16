@@ -1,0 +1,116 @@
+{
+  "model": "gemma",
+  "centroid_half": "A",
+  "cells": {
+    "SM": {
+      "arm": "lb_continue",
+      "form": "saturated",
+      "content": "mystical",
+      "is_anchor": true,
+      "n_rows": 19,
+      "mr_closest_frac": 0.9473684210526315,
+      "mr_closest_ci90": [
+        0.8421052631578947,
+        1.0
+      ],
+      "margin_as_frac_of_canonical_pairwise": 0.9195732160019571,
+      "modal_cell": "MR",
+      "closest_cell_counter": {
+        "HB": 0,
+        "HN-D": 0,
+        "HN-S": 0,
+        "HP-D": 0,
+        "HP-S": 0,
+        "LN": 0,
+        "LP": 1,
+        "MR": 18,
+        "NB": 0,
+        "NP": 0
+      }
+    },
+    "Sm": {
+      "arm": "sat_mundane_continue",
+      "form": "saturated",
+      "content": "mundane",
+      "is_anchor": false,
+      "n_rows": 40,
+      "mr_closest_frac": 0.925,
+      "mr_closest_ci90": [
+        0.85,
+        0.975
+      ],
+      "margin_as_frac_of_canonical_pairwise": 0.7982310094719028,
+      "modal_cell": "MR",
+      "closest_cell_counter": {
+        "HB": 1,
+        "HN-D": 1,
+        "HN-S": 0,
+        "HP-D": 0,
+        "HP-S": 0,
+        "LN": 0,
+        "LP": 0,
+        "MR": 37,
+        "NB": 0,
+        "NP": 1
+      }
+    },
+    "pM": {
+      "arm": "plain_mystical_continue",
+      "form": "plain",
+      "content": "mystical",
+      "is_anchor": false,
+      "n_rows": 40,
+      "mr_closest_frac": 0.825,
+      "mr_closest_ci90": [
+        0.725,
+        0.925
+      ],
+      "margin_as_frac_of_canonical_pairwise": 0.8039112299943934,
+      "modal_cell": "MR",
+      "closest_cell_counter": {
+        "HB": 1,
+        "HN-D": 0,
+        "HN-S": 1,
+        "HP-D": 0,
+        "HP-S": 1,
+        "LN": 0,
+        "LP": 4,
+        "MR": 33,
+        "NB": 0,
+        "NP": 0
+      }
+    },
+    "pm": {
+      "arm": "plain_mundane_continue",
+      "form": "plain",
+      "content": "mundane",
+      "is_anchor": false,
+      "n_rows": 40,
+      "mr_closest_frac": 0.975,
+      "mr_closest_ci90": [
+        0.925,
+        1.0
+      ],
+      "margin_as_frac_of_canonical_pairwise": 0.9864414747919875,
+      "modal_cell": "MR",
+      "closest_cell_counter": {
+        "HB": 0,
+        "HN-D": 0,
+        "HN-S": 0,
+        "HP-D": 0,
+        "HP-S": 0,
+        "LN": 0,
+        "LP": 1,
+        "MR": 39,
+        "NB": 0,
+        "NP": 0
+      }
+    }
+  },
+  "verdict": {
+    "complete": true,
+    "form_main_effect_pp": 3.618421052631593,
+    "content_main_effect_pp": -6.381578947368416,
+    "call": "FALSIFY / REVISE \u2014 see decision rule"
+  }
+}

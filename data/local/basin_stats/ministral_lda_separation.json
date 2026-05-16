@@ -1,0 +1,50 @@
+{
+  "model": "ministral",
+  "centroid_half": "A",
+  "n_train_rows": 748,
+  "n_classes": 10,
+  "n_pca_components": 80,
+  "n_lda_components": 9,
+  "lda_explained_variance_ratio": [
+    0.7400039434432983,
+    0.08885136246681213,
+    0.05988997593522072,
+    0.04675758630037308,
+    0.023746199905872345,
+    0.016152700409293175,
+    0.012145956978201866,
+    0.0077745974995195866,
+    0.004677699878811836
+  ],
+  "centroid_pca_explained_variance_ratio": [
+    0.36255207657814026,
+    0.22137460112571716,
+    0.15925399959087372,
+    0.07930637896060944,
+    0.06302027404308319,
+    0.04231856018304825,
+    0.029703032225370407,
+    0.025846663862466812,
+    0.01662442646920681
+  ],
+  "separation_pca_top3": {
+    "mr_to_nearest_dist": 71.64065551757812,
+    "nearest_cell": "LP",
+    "canonical_mean_pairwise_dist": 50.285486340522766,
+    "ratio": 1.4246785848394232
+  },
+  "separation_lda_top3": {
+    "mr_to_nearest_dist": 108.21212768554688,
+    "nearest_cell": "HB",
+    "canonical_mean_pairwise_dist": 22.895949138535393,
+    "ratio": 4.726256467062933
+  },
+  "lda_over_pca_ratio_gain": 3.3174194638404235,
+  "arms_rendered": [
+    "conspiracy_continue",
+    "doom_continue",
+    "lb_continue",
+    "neutral_seed",
+    "sycophancy_continue"
+  ]
+}

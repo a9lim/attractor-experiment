@@ -1,0 +1,27 @@
+# build / editable install artifacts
+*.egg-info/
+dist/
+build/
+__pycache__/
+*.pyc
+
+# hidden-state sidecars — ~50 MB per generation, far too big for git.
+# Regenerable from the emit scripts with the model cached. Local-only
+# by design.
+data/local/hidden/
+
+# local envs
+.venv/
+.env
+
+# run logs — ad-hoc tee'd output, not part of the experimental record
+logs/
+
+# editor cruft
+.DS_Store
+.idea/
+.vscode/
+.claude/
+
+# working backups
+data/**/*.bak.*

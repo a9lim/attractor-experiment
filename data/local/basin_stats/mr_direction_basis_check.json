@@ -1,0 +1,173 @@
+[
+  {
+    "model": "gemma",
+    "halves": {
+      "A": {
+        "n_common_layers": 54,
+        "n_hf_layers": 54,
+        "n_co_layers": 58,
+        "directions": {
+          "MR-NB": {
+            "full_stack_cos": 0.017772312522913197,
+            "per_layer_cos_mean": 0.04649349668987664,
+            "per_layer_cos_min": -0.44349683027190134,
+            "per_layer_cos_max": 0.21608069583247821
+          },
+          "MR-mean": {
+            "full_stack_cos": 0.031104893654583302,
+            "per_layer_cos_mean": 0.07477868386561136,
+            "per_layer_cos_min": -0.5434071826073265,
+            "per_layer_cos_max": 0.3499049990773951
+          },
+          "MR-raw": {
+            "full_stack_cos": 0.9211167793123639,
+            "per_layer_cos_mean": 0.8565964235969405,
+            "per_layer_cos_min": 0.1819658951836646,
+            "per_layer_cos_max": 0.9817111874734613
+          }
+        }
+      },
+      "B": {
+        "n_common_layers": 54,
+        "n_hf_layers": 54,
+        "n_co_layers": 58,
+        "directions": {
+          "MR-NB": {
+            "full_stack_cos": 0.03011895950860328,
+            "per_layer_cos_mean": 0.03990076965332512,
+            "per_layer_cos_min": -0.511790592427144,
+            "per_layer_cos_max": 0.23477427484442326
+          },
+          "MR-mean": {
+            "full_stack_cos": 0.03804869867202052,
+            "per_layer_cos_mean": 0.08879148599945157,
+            "per_layer_cos_min": -0.5306064645665373,
+            "per_layer_cos_max": 0.35445119045601914
+          },
+          "MR-raw": {
+            "full_stack_cos": 0.9253821252884066,
+            "per_layer_cos_mean": 0.8626454606185684,
+            "per_layer_cos_min": 0.20840402574711953,
+            "per_layer_cos_max": 0.9809779746006095
+          }
+        }
+      }
+    },
+    "h_first_AB_MR-NB_cos": 0.9362481692111342,
+    "continuation_AB_MR-NB_cos": 0.8076499009389249
+  },
+  {
+    "model": "qwen",
+    "halves": {
+      "A": {
+        "n_common_layers": 60,
+        "n_hf_layers": 60,
+        "n_co_layers": 64,
+        "directions": {
+          "MR-NB": {
+            "full_stack_cos": 0.15282434362748368,
+            "per_layer_cos_mean": 0.11060240529597867,
+            "per_layer_cos_min": -0.03342886640164428,
+            "per_layer_cos_max": 0.1985907314890219
+          },
+          "MR-mean": {
+            "full_stack_cos": 0.1622950812750086,
+            "per_layer_cos_mean": 0.12906043673685919,
+            "per_layer_cos_min": 0.047692585287922036,
+            "per_layer_cos_max": 0.25997607512573634
+          },
+          "MR-raw": {
+            "full_stack_cos": 0.5722245980038321,
+            "per_layer_cos_mean": 0.7666969869166184,
+            "per_layer_cos_min": 0.4317478847082521,
+            "per_layer_cos_max": 0.9790228389586225
+          }
+        }
+      },
+      "B": {
+        "n_common_layers": 60,
+        "n_hf_layers": 60,
+        "n_co_layers": 64,
+        "directions": {
+          "MR-NB": {
+            "full_stack_cos": 0.17608144759494374,
+            "per_layer_cos_mean": 0.11917812864700941,
+            "per_layer_cos_min": -0.019795929000657488,
+            "per_layer_cos_max": 0.21046809944916417
+          },
+          "MR-mean": {
+            "full_stack_cos": 0.13817454830362433,
+            "per_layer_cos_mean": 0.10827040597350039,
+            "per_layer_cos_min": 0.02157872851089542,
+            "per_layer_cos_max": 0.2099940953581982
+          },
+          "MR-raw": {
+            "full_stack_cos": 0.5601446698474017,
+            "per_layer_cos_mean": 0.7575838079577903,
+            "per_layer_cos_min": 0.4198705118576063,
+            "per_layer_cos_max": 0.9793105173617778
+          }
+        }
+      }
+    },
+    "h_first_AB_MR-NB_cos": 0.9099592778370182,
+    "continuation_AB_MR-NB_cos": 0.7068908540091837
+  },
+  {
+    "model": "ministral",
+    "halves": {
+      "A": {
+        "n_common_layers": 36,
+        "n_hf_layers": 36,
+        "n_co_layers": 36,
+        "directions": {
+          "MR-NB": {
+            "full_stack_cos": 0.08880189045417779,
+            "per_layer_cos_mean": 0.07270667473084146,
+            "per_layer_cos_min": -0.0014099228884709848,
+            "per_layer_cos_max": 0.13581780206292446
+          },
+          "MR-mean": {
+            "full_stack_cos": 0.13140204931840047,
+            "per_layer_cos_mean": 0.12035099886550397,
+            "per_layer_cos_min": -0.016539771509155834,
+            "per_layer_cos_max": 0.18667376927346513
+          },
+          "MR-raw": {
+            "full_stack_cos": 0.45996120436095633,
+            "per_layer_cos_mean": 0.49753993831939103,
+            "per_layer_cos_min": 0.3956902687717206,
+            "per_layer_cos_max": 0.6912835428222962
+          }
+        }
+      },
+      "B": {
+        "n_common_layers": 36,
+        "n_hf_layers": 36,
+        "n_co_layers": 36,
+        "directions": {
+          "MR-NB": {
+            "full_stack_cos": 0.11279902733168014,
+            "per_layer_cos_mean": 0.08406587064447116,
+            "per_layer_cos_min": -0.003994188460710853,
+            "per_layer_cos_max": 0.1634319179723354
+          },
+          "MR-mean": {
+            "full_stack_cos": 0.13451145815208593,
+            "per_layer_cos_mean": 0.12101612817130349,
+            "per_layer_cos_min": -0.005412142898636275,
+            "per_layer_cos_max": 0.18717967638139443
+          },
+          "MR-raw": {
+            "full_stack_cos": 0.47215551675818185,
+            "per_layer_cos_mean": 0.5087328822669228,
+            "per_layer_cos_min": 0.4076257185401858,
+            "per_layer_cos_max": 0.7187901878952496
+          }
+        }
+      }
+    },
+    "h_first_AB_MR-NB_cos": 0.9376704473622128,
+    "continuation_AB_MR-NB_cos": 0.6216120117846696
+  }
+]

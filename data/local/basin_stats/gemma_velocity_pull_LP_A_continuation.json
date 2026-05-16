@@ -1,0 +1,152 @@
+{
+  "model": "gemma",
+  "centroid_half": "A",
+  "centroid_dir": "continuation_centroid_holdout",
+  "target_cell": "LP",
+  "per_arm": {
+    "lb_continue": {
+      "n_trajectories": 19,
+      "n_steps_total": 273,
+      "mean_pull": 0.3150156940284528,
+      "std_pull_per_traj": 0.06452528140187293,
+      "t_stat_against_zero": 21.280365556987693,
+      "fraction_steps_positive": 0.967032967032967,
+      "distance_quintile_means": [
+        0.3591335815091787,
+        0.2014293258630291,
+        0.2912157562984662,
+        0.322529927758431,
+        0.34914968606423247
+      ],
+      "distance_quintile_counts": [
+        55,
+        54,
+        55,
+        54,
+        55
+      ],
+      "min_dist": 520.3093872070312,
+      "max_dist": 1249.188232421875
+    },
+    "doom_continue": {
+      "n_trajectories": 20,
+      "n_steps_total": 272,
+      "mean_pull": 0.31690045073628426,
+      "std_pull_per_traj": 0.09791416974947167,
+      "t_stat_against_zero": 14.474124669794863,
+      "fraction_steps_positive": 0.9632352941176471,
+      "distance_quintile_means": [
+        0.36735391962257297,
+        0.22496817448969791,
+        0.24542749052246413,
+        0.3024913906119764,
+        0.33288944079117344
+      ],
+      "distance_quintile_counts": [
+        55,
+        54,
+        54,
+        54,
+        55
+      ],
+      "min_dist": 517.7522583007812,
+      "max_dist": 1243.562255859375
+    },
+    "conspiracy_continue": {
+      "n_trajectories": 20,
+      "n_steps_total": 265,
+      "mean_pull": 0.34201610535383226,
+      "std_pull_per_traj": 0.10541613801323288,
+      "t_stat_against_zero": 14.509567043233876,
+      "fraction_steps_positive": 0.9735849056603774,
+      "distance_quintile_means": [
+        0.44147037855296767,
+        0.26252444510189993,
+        0.24488213855140614,
+        0.30821177911645964,
+        0.35812013694700207
+      ],
+      "distance_quintile_counts": [
+        53,
+        53,
+        53,
+        53,
+        53
+      ],
+      "min_dist": 503.6123352050781,
+      "max_dist": 828.729736328125
+    },
+    "sycophancy_continue": {
+      "n_trajectories": 20,
+      "n_steps_total": 287,
+      "mean_pull": 0.30764591991901397,
+      "std_pull_per_traj": 0.087312505366337,
+      "t_stat_against_zero": 15.757586775298185,
+      "fraction_steps_positive": 0.9651567944250871,
+      "distance_quintile_means": [
+        0.3347095682622929,
+        0.25331414500741584,
+        0.2671154778810185,
+        0.26817319042196397,
+        0.3418469459846102
+      ],
+      "distance_quintile_counts": [
+        58,
+        57,
+        57,
+        57,
+        58
+      ],
+      "min_dist": 524.2365112304688,
+      "max_dist": 1143.2730712890625
+    },
+    "mirror_continue": {
+      "n_trajectories": 90,
+      "n_steps_total": 1263,
+      "mean_pull": 0.6017115394274394,
+      "std_pull_per_traj": 0.01803105881628485,
+      "t_stat_against_zero": 316.58356478961923,
+      "fraction_steps_positive": 1.0,
+      "distance_quintile_means": [
+        0.5570605530333613,
+        0.579012064351922,
+        0.5871402958165044,
+        0.6022925710394269,
+        0.6765750374483026
+      ],
+      "distance_quintile_counts": [
+        253,
+        252,
+        253,
+        252,
+        253
+      ],
+      "min_dist": 501.1215515136719,
+      "max_dist": 933.9442138671875
+    },
+    "neutral_seed": {
+      "n_trajectories": 10,
+      "n_steps_total": 144,
+      "mean_pull": 0.589079886674881,
+      "std_pull_per_traj": 0.025183412352035122,
+      "t_stat_against_zero": 73.9706811629107,
+      "fraction_steps_positive": 1.0,
+      "distance_quintile_means": [
+        0.5642732392097342,
+        0.5645972233394096,
+        0.5813096410461834,
+        0.5570770687070387,
+        0.671898820276918
+      ],
+      "distance_quintile_counts": [
+        29,
+        29,
+        28,
+        29,
+        29
+      ],
+      "min_dist": 519.2662963867188,
+      "max_dist": 941.7319946289062
+    }
+  }
+}

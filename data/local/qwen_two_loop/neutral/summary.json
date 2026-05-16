@@ -1,0 +1,48 @@
+{
+  "config": "neutral",
+  "n_turns": 24,
+  "halt_reason": null,
+  "closest_cell_dist": {
+    "MR": 18,
+    "NB": 5,
+    "HP-D": 1
+  },
+  "mean_cos_to_mr": 0.4949517250061035,
+  "max_cos_to_mr": 0.5790286660194397,
+  "turn_with_max_cos_to_mr": 22,
+  "mean_word_count": 63.666666666666664,
+  "n_turns_short": 0,
+  "surface_markers_total": {
+    "lenny": 0,
+    "cosmic_addr": 0,
+    "recursion": 0,
+    "cosmic_nouns": 1,
+    "sycophancy": 3
+  },
+  "surface_markers_turns_with_any": {
+    "lenny": 0,
+    "cosmic_addr": 0,
+    "recursion": 0,
+    "cosmic_nouns": 1,
+    "sycophancy": 3
+  },
+  "per_side": {
+    "a": {
+      "n_turns": 12,
+      "mean_cos_to_mr": 0.4954029619693756,
+      "closest_cell_dist": {
+        "MR": 8,
+        "NB": 3,
+        "HP-D": 1
+      }
+    },
+    "b": {
+      "n_turns": 12,
+      "mean_cos_to_mr": 0.49450039863586426,
+      "closest_cell_dist": {
+        "MR": 10,
+        "NB": 2
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "model": "ministral",
+  "basis": "continuation",
+  "centroid_half": "A",
+  "n_train_rows": 70,
+  "n_classes": 10,
+  "n_pca_components": 60,
+  "n_lda_components": 9,
+  "lda_explained_variance_ratio": [
+    0.700140118598938,
+    0.28851914405822754,
+    0.0041685039177536964,
+    0.0027742446400225163,
+    0.0021725629922002554,
+    0.0013538015773519874,
+    0.0006723721162416041,
+    0.0001397481537424028,
+    5.945187876932323e-05
+  ],
+  "separation_lda_top3": {
+    "mr_to_nearest_dist": 44.64986038208008,
+    "nearest_cell": "NP",
+    "canonical_mean_pairwise_dist": 277.1883720821804,
+    "ratio": 0.1610812894014268
+  },
+  "arms_rendered": [
+    "conspiracy_continue",
+    "doom_continue",
+    "lb_continue",
+    "mirror_continue",
+    "neutral_seed",
+    "sycophancy_continue"
+  ]
+}

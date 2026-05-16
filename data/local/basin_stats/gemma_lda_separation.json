@@ -1,0 +1,51 @@
+{
+  "model": "gemma",
+  "centroid_half": "A",
+  "n_train_rows": 800,
+  "n_classes": 10,
+  "n_pca_components": 80,
+  "n_lda_components": 9,
+  "lda_explained_variance_ratio": [
+    0.6144794225692749,
+    0.15889954566955566,
+    0.09022976458072662,
+    0.05456778407096863,
+    0.03625936433672905,
+    0.018610939383506775,
+    0.012092848308384418,
+    0.009174419566988945,
+    0.005685929674655199
+  ],
+  "centroid_pca_explained_variance_ratio": [
+    0.36488601565361023,
+    0.1969788819551468,
+    0.151683509349823,
+    0.0998968556523323,
+    0.0662420466542244,
+    0.046243153512477875,
+    0.03141015022993088,
+    0.025446875020861626,
+    0.01721245050430298
+  ],
+  "separation_pca_top3": {
+    "mr_to_nearest_dist": 111.79024505615234,
+    "nearest_cell": "LP",
+    "canonical_mean_pairwise_dist": 146.18493917253284,
+    "ratio": 0.7647179366693404
+  },
+  "separation_lda_top3": {
+    "mr_to_nearest_dist": 123.38001251220703,
+    "nearest_cell": "LP",
+    "canonical_mean_pairwise_dist": 39.64524695608351,
+    "ratio": 3.112100995331914
+  },
+  "lda_over_pca_ratio_gain": 4.069606381780958,
+  "arms_rendered": [
+    "conspiracy_continue",
+    "doom_continue",
+    "lb_continue",
+    "mirror_continue",
+    "neutral_seed",
+    "sycophancy_continue"
+  ]
+}

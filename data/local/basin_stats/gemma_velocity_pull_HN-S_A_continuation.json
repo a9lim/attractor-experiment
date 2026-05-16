@@ -1,0 +1,152 @@
+{
+  "model": "gemma",
+  "centroid_half": "A",
+  "centroid_dir": "continuation_centroid_holdout",
+  "target_cell": "HN-S",
+  "per_arm": {
+    "lb_continue": {
+      "n_trajectories": 19,
+      "n_steps_total": 273,
+      "mean_pull": 0.34141967171116877,
+      "std_pull_per_traj": 0.059237918976237904,
+      "t_stat_against_zero": 25.122655759105655,
+      "fraction_steps_positive": 0.9853479853479854,
+      "distance_quintile_means": [
+        0.3777203714305704,
+        0.2538487221226441,
+        0.34328239207917993,
+        0.33185322520633537,
+        0.35576929294250226
+      ],
+      "distance_quintile_counts": [
+        55,
+        54,
+        55,
+        54,
+        55
+      ],
+      "min_dist": 524.0808715820312,
+      "max_dist": 1191.218017578125
+    },
+    "doom_continue": {
+      "n_trajectories": 20,
+      "n_steps_total": 272,
+      "mean_pull": 0.3402758605778217,
+      "std_pull_per_traj": 0.08737072835007277,
+      "t_stat_against_zero": 17.417273947988477,
+      "fraction_steps_positive": 0.9742647058823529,
+      "distance_quintile_means": [
+        0.3939150899140672,
+        0.26176835962191775,
+        0.2797460124172546,
+        0.32903808396723533,
+        0.33536623587662523
+      ],
+      "distance_quintile_counts": [
+        55,
+        54,
+        54,
+        54,
+        55
+      ],
+      "min_dist": 536.9934692382812,
+      "max_dist": 1185.2779541015625
+    },
+    "conspiracy_continue": {
+      "n_trajectories": 20,
+      "n_steps_total": 265,
+      "mean_pull": 0.3662027895450592,
+      "std_pull_per_traj": 0.09215254977685294,
+      "t_stat_against_zero": 17.77171294675306,
+      "fraction_steps_positive": 0.9735849056603774,
+      "distance_quintile_means": [
+        0.467209370771669,
+        0.29336272538551744,
+        0.28727363893445934,
+        0.3354308593947932,
+        0.36449276051431334
+      ],
+      "distance_quintile_counts": [
+        53,
+        53,
+        53,
+        53,
+        53
+      ],
+      "min_dist": 520.4544677734375,
+      "max_dist": 766.7252807617188
+    },
+    "sycophancy_continue": {
+      "n_trajectories": 20,
+      "n_steps_total": 287,
+      "mean_pull": 0.33352684378623965,
+      "std_pull_per_traj": 0.08199276492680849,
+      "t_stat_against_zero": 18.191573261194925,
+      "fraction_steps_positive": 0.9790940766550522,
+      "distance_quintile_means": [
+        0.3752532082706176,
+        0.28952234699145746,
+        0.2915424608478421,
+        0.2833189981123596,
+        0.36205431009674893
+      ],
+      "distance_quintile_counts": [
+        58,
+        57,
+        57,
+        57,
+        58
+      ],
+      "min_dist": 513.0414428710938,
+      "max_dist": 1087.6798095703125
+    },
+    "mirror_continue": {
+      "n_trajectories": 90,
+      "n_steps_total": 1263,
+      "mean_pull": 0.6085492160585192,
+      "std_pull_per_traj": 0.017357003361546504,
+      "t_stat_against_zero": 332.6152938331929,
+      "fraction_steps_positive": 1.0,
+      "distance_quintile_means": [
+        0.5655162497000261,
+        0.584792916382116,
+        0.5977083178376963,
+        0.603336092262041,
+        0.6873636359989408
+      ],
+      "distance_quintile_counts": [
+        253,
+        252,
+        253,
+        252,
+        253
+      ],
+      "min_dist": 499.1478271484375,
+      "max_dist": 901.4177856445312
+    },
+    "neutral_seed": {
+      "n_trajectories": 10,
+      "n_steps_total": 144,
+      "mean_pull": 0.5977255940437317,
+      "std_pull_per_traj": 0.019301532954113063,
+      "t_stat_against_zero": 97.92871361300759,
+      "fraction_steps_positive": 1.0,
+      "distance_quintile_means": [
+        0.5623891733843704,
+        0.5655451560842579,
+        0.571265849683966,
+        0.6007710705543386,
+        0.6807182379837694
+      ],
+      "distance_quintile_counts": [
+        29,
+        29,
+        28,
+        29,
+        29
+      ],
+      "min_dist": 531.6239013671875,
+      "max_dist": 911.6986694335938
+    }
+  }
+}

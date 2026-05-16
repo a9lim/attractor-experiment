@@ -1,0 +1,34 @@
+{
+  "model": "gemma",
+  "basis": "continuation",
+  "centroid_half": "A",
+  "n_train_rows": 85,
+  "n_classes": 10,
+  "n_pca_components": 75,
+  "n_lda_components": 9,
+  "lda_explained_variance_ratio": [
+    0.8746622800827026,
+    0.05192823335528374,
+    0.037932634353637695,
+    0.01672685146331787,
+    0.008954218588769436,
+    0.005345767829567194,
+    0.002406890271231532,
+    0.0016757076373323798,
+    0.00036735687172040343
+  ],
+  "separation_lda_top3": {
+    "mr_to_nearest_dist": 1036.48193359375,
+    "nearest_cell": "NP",
+    "canonical_mean_pairwise_dist": 3190.7530212402344,
+    "ratio": 0.3248392861165021
+  },
+  "arms_rendered": [
+    "conspiracy_continue",
+    "doom_continue",
+    "lb_continue",
+    "mirror_continue",
+    "neutral_seed",
+    "sycophancy_continue"
+  ]
+}

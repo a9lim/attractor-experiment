@@ -1,0 +1,32 @@
+[project]
+name = "attractor-study"
+version = "0.1.0"
+description = "Does a meta-register attractor basin exist in LLM residual streams? Spun off from llmoji-study (2026-05-15)."
+requires-python = ">=3.11"
+license = "CC-BY-SA-4.0"
+license-files = ["LICENSE"]
+authors = [{ name = "a9lim", email = "mx@a9l.im" }]
+# The shared hidden-state engine (model registry, capture, sidecar IO,
+# the quadrant taxonomy) lives in `llmoji-study`, which is not on PyPI.
+# Install it editable first — see README "Reproducing". Published deps:
+dependencies = [
+    "llmoji>=2.0,<3",
+    "saklas>=1.4.6",
+    "numpy",
+    "scipy",
+    "scikit-learn",
+    "matplotlib",
+    "pandas",
+    "pyarrow",
+    "plotly",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+# Research repo, not published. The wheel config exists only so
+# `pip install -e .` works and `from attractor_study import …`
+# resolves. The real entry points are the scripts in `scripts/`.
+packages = ["attractor_study"]

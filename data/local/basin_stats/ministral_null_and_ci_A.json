@@ -1,0 +1,116 @@
+{
+  "model": "ministral",
+  "centroid_half": "A",
+  "n_bootstrap": 1000,
+  "n_permute": 10000,
+  "seed": 0,
+  "bootstrap_basin_lock": {
+    "lb_continue": {
+      "n_trajectories": 9,
+      "t_mid_MR_pct": 1.0,
+      "t_mid_MR_ci": [
+        1.0,
+        1.0
+      ],
+      "t_end_MR_pct": 1.0,
+      "t_end_MR_ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "doom_continue": {
+      "n_trajectories": 10,
+      "t_mid_MR_pct": 1.0,
+      "t_mid_MR_ci": [
+        1.0,
+        1.0
+      ],
+      "t_end_MR_pct": 1.0,
+      "t_end_MR_ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "conspiracy_continue": {
+      "n_trajectories": 14,
+      "t_mid_MR_pct": 1.0,
+      "t_mid_MR_ci": [
+        1.0,
+        1.0
+      ],
+      "t_end_MR_pct": 1.0,
+      "t_end_MR_ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "sycophancy_continue": {
+      "n_trajectories": 12,
+      "t_mid_MR_pct": 1.0,
+      "t_mid_MR_ci": [
+        1.0,
+        1.0
+      ],
+      "t_end_MR_pct": 1.0,
+      "t_end_MR_ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "neutral_seed": {
+      "n_trajectories": 10,
+      "t_mid_MR_pct": 1.0,
+      "t_mid_MR_ci": [
+        1.0,
+        1.0
+      ],
+      "t_end_MR_pct": 1.0,
+      "t_end_MR_ci": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "arm_arm_null": {
+    "lb_continue__doom_continue": {
+      "observed_cos": 0.8863962292671204,
+      "null_mean": 0.8840882939219474,
+      "null_std": 0.013377541241259833,
+      "null_max": 0.9193300008773804,
+      "null_p95": 0.904133003950119,
+      "p_one_sided": 0.4586
+    },
+    "lb_continue__conspiracy_continue": {
+      "observed_cos": 0.8799448609352112,
+      "null_mean": 0.8810016477048397,
+      "null_std": 0.010095287321281503,
+      "null_max": 0.9075181484222412,
+      "null_p95": 0.8959540218114853,
+      "p_one_sided": 0.5795
+    },
+    "lb_continue__sycophancy_continue": {
+      "observed_cos": 0.8284527063369751,
+      "null_mean": 0.8831097759008407,
+      "null_std": 0.010729779119279833,
+      "null_max": 0.9108562469482422,
+      "null_p95": 0.8987078875303268,
+      "p_one_sided": 1.0
+    },
+    "doom_continue__conspiracy_continue": {
+      "observed_cos": 0.8826873898506165,
+      "null_mean": 0.8869099243998527,
+      "null_std": 0.010139680949178543,
+      "null_max": 0.9124155640602112,
+      "null_p95": 0.9013459235429764,
+      "p_one_sided": 0.7001
+    },
+    "lb_continue__neutral_seed": {
+      "observed_cos": 0.5948059558868408,
+      "null_mean": 0.8454324149847031,
+      "null_std": 0.028587589853660663,
+      "null_max": 0.892889678478241,
+      "null_p95": 0.8779088795185089,
+      "p_one_sided": 1.0
+    }
+  }
+}

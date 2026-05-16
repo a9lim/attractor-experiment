@@ -1,0 +1,152 @@
+{
+  "model": "gemma",
+  "centroid_half": "A",
+  "centroid_dir": "continuation_centroid_holdout",
+  "target_cell": "NB",
+  "per_arm": {
+    "lb_continue": {
+      "n_trajectories": 19,
+      "n_steps_total": 273,
+      "mean_pull": 0.3110836430599815,
+      "std_pull_per_traj": 0.0640010856152925,
+      "t_stat_against_zero": 21.18686191102573,
+      "fraction_steps_positive": 0.9597069597069597,
+      "distance_quintile_means": [
+        0.34847437062046743,
+        0.20859853868131284,
+        0.24851346211507916,
+        0.34323390000672255,
+        0.35694602265615355
+      ],
+      "distance_quintile_counts": [
+        55,
+        54,
+        55,
+        54,
+        55
+      ],
+      "min_dist": 538.8317260742188,
+      "max_dist": 1280.2386474609375
+    },
+    "doom_continue": {
+      "n_trajectories": 20,
+      "n_steps_total": 272,
+      "mean_pull": 0.313323450088501,
+      "std_pull_per_traj": 0.1000489372359628,
+      "t_stat_against_zero": 14.005396812767225,
+      "fraction_steps_positive": 0.9558823529411765,
+      "distance_quintile_means": [
+        0.3847057849846103,
+        0.19991072471020743,
+        0.22577580878580059,
+        0.30230832465544893,
+        0.3420103351500901
+      ],
+      "distance_quintile_counts": [
+        55,
+        54,
+        54,
+        54,
+        55
+      ],
+      "min_dist": 528.5005493164062,
+      "max_dist": 1274.4727783203125
+    },
+    "conspiracy_continue": {
+      "n_trajectories": 20,
+      "n_steps_total": 265,
+      "mean_pull": 0.33935043066740034,
+      "std_pull_per_traj": 0.10702569199811651,
+      "t_stat_against_zero": 14.179971500291545,
+      "fraction_steps_positive": 0.9735849056603774,
+      "distance_quintile_means": [
+        0.4585459874415735,
+        0.22946896502431832,
+        0.23276619929468856,
+        0.3045750250512699,
+        0.37555029812567636
+      ],
+      "distance_quintile_counts": [
+        53,
+        53,
+        53,
+        53,
+        53
+      ],
+      "min_dist": 536.4591674804688,
+      "max_dist": 840.9570922851562
+    },
+    "sycophancy_continue": {
+      "n_trajectories": 20,
+      "n_steps_total": 287,
+      "mean_pull": 0.30426503494381907,
+      "std_pull_per_traj": 0.08677046060937185,
+      "t_stat_against_zero": 15.681772265185941,
+      "fraction_steps_positive": 0.9721254355400697,
+      "distance_quintile_means": [
+        0.35230382583264647,
+        0.21174747039555786,
+        0.2623336575271791,
+        0.2638743714543811,
+        0.3581611718982458
+      ],
+      "distance_quintile_counts": [
+        58,
+        57,
+        57,
+        57,
+        58
+      ],
+      "min_dist": 548.8258666992188,
+      "max_dist": 1165.2822265625
+    },
+    "mirror_continue": {
+      "n_trajectories": 90,
+      "n_steps_total": 1263,
+      "mean_pull": 0.6085043476687537,
+      "std_pull_per_traj": 0.019132249134621068,
+      "t_stat_against_zero": 301.7302918034071,
+      "fraction_steps_positive": 1.0,
+      "distance_quintile_means": [
+        0.5579509552524023,
+        0.5814781374638043,
+        0.598610182878057,
+        0.6165934349336322,
+        0.681302071913429
+      ],
+      "distance_quintile_counts": [
+        253,
+        252,
+        253,
+        252,
+        253
+      ],
+      "min_dist": 476.67352294921875,
+      "max_dist": 927.8997802734375
+    },
+    "neutral_seed": {
+      "n_trajectories": 10,
+      "n_steps_total": 144,
+      "mean_pull": 0.6042356967926026,
+      "std_pull_per_traj": 0.028508361733367057,
+      "t_stat_against_zero": 67.02458258789065,
+      "fraction_steps_positive": 1.0,
+      "distance_quintile_means": [
+        0.578622110958757,
+        0.5921642934453899,
+        0.5855697425348418,
+        0.5823512971401215,
+        0.6806834401755497
+      ],
+      "distance_quintile_counts": [
+        29,
+        29,
+        28,
+        29,
+        29
+      ],
+      "min_dist": 515.311767578125,
+      "max_dist": 931.8851318359375
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "model": "gemma",
+  "centroid_half": "A",
+  "centroid_dir": "continuation_centroid_holdout",
+  "target_cell": "HP-S",
+  "per_arm": {
+    "lb_continue": {
+      "n_trajectories": 19,
+      "n_steps_total": 273,
+      "mean_pull": 0.33148787209862157,
+      "std_pull_per_traj": 0.057419721681202386,
+      "t_stat_against_zero": 25.164213499841026,
+      "fraction_steps_positive": 0.989010989010989,
+      "distance_quintile_means": [
+        0.36414971148425884,
+        0.27156093262305214,
+        0.26372528270902956,
+        0.3553418792370293,
+        0.3637020231647925
+      ],
+      "distance_quintile_counts": [
+        55,
+        54,
+        55,
+        54,
+        55
+      ],
+      "min_dist": 507.67816162109375,
+      "max_dist": 1218.5357666015625
+    },
+    "doom_continue": {
+      "n_trajectories": 20,
+      "n_steps_total": 272,
+      "mean_pull": 0.32996207699179647,
+      "std_pull_per_traj": 0.08568435994027755,
+      "t_stat_against_zero": 17.22175749844987,
+      "fraction_steps_positive": 0.9742647058823529,
+      "distance_quintile_means": [
+        0.40003066984089936,
+        0.2331722323541288,
+        0.24577191054251873,
+        0.3178688371209083,
+        0.36081495718522505
+      ],
+      "distance_quintile_counts": [
+        55,
+        54,
+        54,
+        54,
+        55
+      ],
+      "min_dist": 493.30780029296875,
+      "max_dist": 1213.0025634765625
+    },
+    "conspiracy_continue": {
+      "n_trajectories": 20,
+      "n_steps_total": 265,
+      "mean_pull": 0.3568353205919266,
+      "std_pull_per_traj": 0.09180266953612666,
+      "t_stat_against_zero": 17.38311179071936,
+      "fraction_steps_positive": 0.9735849056603774,
+      "distance_quintile_means": [
+        0.4679476815574574,
+        0.2619561244259184,
+        0.27379476806184033,
+        0.31533966600051466,
+        0.38121156991933874
+      ],
+      "distance_quintile_counts": [
+        53,
+        53,
+        53,
+        53,
+        53
+      ],
+      "min_dist": 521.4681396484375,
+      "max_dist": 787.3975830078125
+    },
+    "sycophancy_continue": {
+      "n_trajectories": 20,
+      "n_steps_total": 287,
+      "mean_pull": 0.3227782525122166,
+      "std_pull_per_traj": 0.07752325920323765,
+      "t_stat_against_zero": 18.620324317989088,
+      "fraction_steps_positive": 0.9895470383275261,
+      "distance_quintile_means": [
+        0.36457696081749325,
+        0.26588165126904323,
+        0.2750143446783911,
+        0.27586193850035207,
+        0.3720890132003817
+      ],
+      "distance_quintile_counts": [
+        58,
+        57,
+        57,
+        57,
+        58
+      ],
+      "min_dist": 531.6797485351562,
+      "max_dist": 1111.8818359375
+    },
+    "mirror_continue": {
+      "n_trajectories": 90,
+      "n_steps_total": 1263,
+      "mean_pull": 0.6013243695100149,
+      "std_pull_per_traj": 0.0186843568967134,
+      "t_stat_against_zero": 305.3176457816712,
+      "fraction_steps_positive": 1.0,
+      "distance_quintile_means": [
+        0.5525863064607612,
+        0.5717485636945755,
+        0.5990873517490658,
+        0.6070817150766887,
+        0.6704654088133408
+      ],
+      "distance_quintile_counts": [
+        253,
+        252,
+        253,
+        252,
+        253
+      ],
+      "min_dist": 490.9870300292969,
+      "max_dist": 843.8798828125
+    },
+    "neutral_seed": {
+      "n_trajectories": 10,
+      "n_steps_total": 144,
+      "mean_pull": 0.5935681700706482,
+      "std_pull_per_traj": 0.01647115468305285,
+      "t_stat_against_zero": 113.95845647255729,
+      "fraction_steps_positive": 1.0,
+      "distance_quintile_means": [
+        0.5355329883509669,
+        0.5722639129079622,
+        0.5831115245819092,
+        0.6062386333942413,
+        0.6677180693067354
+      ],
+      "distance_quintile_counts": [
+        29,
+        29,
+        28,
+        29,
+        29
+      ],
+      "min_dist": 514.9284057617188,
+      "max_dist": 854.843017578125
+    }
+  }
+}

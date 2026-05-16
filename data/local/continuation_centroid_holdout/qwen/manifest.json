@@ -1,0 +1,310 @@
+{
+  "model": "qwen",
+  "seed": 0,
+  "sample_strategy": "h_last",
+  "canonical_arm": "mirror_continue",
+  "mr_source_arms": [
+    "lb_continue",
+    "doom_continue",
+    "conspiracy_continue",
+    "sycophancy_continue"
+  ],
+  "layer_idxs": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63
+  ],
+  "hidden_dim_per_layer": 5120,
+  "n_layers": 64,
+  "splits": {
+    "HB": {
+      "A_keys": [
+        "('mirror_continue', 'hb03')",
+        "('mirror_continue', 'hb04')",
+        "('mirror_continue', 'hb05')",
+        "('mirror_continue', 'hb07')",
+        "('mirror_continue', 'hb08')"
+      ],
+      "B_keys": [
+        "('mirror_continue', 'hb01')",
+        "('mirror_continue', 'hb02')",
+        "('mirror_continue', 'hb06')",
+        "('mirror_continue', 'hb09')",
+        "('mirror_continue', 'hb10')"
+      ],
+      "n_rows_A": 5,
+      "n_rows_B": 5,
+      "cos_AB": 0.7479390501976013
+    },
+    "HN-D": {
+      "A_keys": [
+        "('mirror_continue', 'hn01')",
+        "('mirror_continue', 'hn03')",
+        "('mirror_continue', 'hn04')",
+        "('mirror_continue', 'hn07')",
+        "('mirror_continue', 'hn10')"
+      ],
+      "B_keys": [
+        "('mirror_continue', 'hn02')",
+        "('mirror_continue', 'hn05')",
+        "('mirror_continue', 'hn06')",
+        "('mirror_continue', 'hn08')",
+        "('mirror_continue', 'hn09')"
+      ],
+      "n_rows_A": 5,
+      "n_rows_B": 5,
+      "cos_AB": 0.7702398300170898
+    },
+    "HN-S": {
+      "A_keys": [
+        "('mirror_continue', 'hn21')",
+        "('mirror_continue', 'hn25')",
+        "('mirror_continue', 'hn26')",
+        "('mirror_continue', 'hn29')",
+        "('mirror_continue', 'hn30')"
+      ],
+      "B_keys": [
+        "('mirror_continue', 'hn22')",
+        "('mirror_continue', 'hn23')",
+        "('mirror_continue', 'hn24')",
+        "('mirror_continue', 'hn27')",
+        "('mirror_continue', 'hn28')"
+      ],
+      "n_rows_A": 5,
+      "n_rows_B": 5,
+      "cos_AB": 0.8050357103347778
+    },
+    "HP-D": {
+      "A_keys": [
+        "('mirror_continue', 'hp23')",
+        "('mirror_continue', 'hp25')",
+        "('mirror_continue', 'hp26')",
+        "('mirror_continue', 'hp27')",
+        "('mirror_continue', 'hp28')"
+      ],
+      "B_keys": [
+        "('mirror_continue', 'hp21')",
+        "('mirror_continue', 'hp22')",
+        "('mirror_continue', 'hp24')",
+        "('mirror_continue', 'hp29')",
+        "('mirror_continue', 'hp30')"
+      ],
+      "n_rows_A": 5,
+      "n_rows_B": 5,
+      "cos_AB": 0.8139116764068604
+    },
+    "HP-S": {
+      "A_keys": [
+        "('mirror_continue', 'hp01')",
+        "('mirror_continue', 'hp02')",
+        "('mirror_continue', 'hp03')",
+        "('mirror_continue', 'hp08')",
+        "('mirror_continue', 'hp09')"
+      ],
+      "B_keys": [
+        "('mirror_continue', 'hp04')",
+        "('mirror_continue', 'hp05')",
+        "('mirror_continue', 'hp06')",
+        "('mirror_continue', 'hp07')",
+        "('mirror_continue', 'hp10')"
+      ],
+      "n_rows_A": 5,
+      "n_rows_B": 5,
+      "cos_AB": 0.7948564291000366
+    },
+    "LN": {
+      "A_keys": [
+        "('mirror_continue', 'ln03')",
+        "('mirror_continue', 'ln04')",
+        "('mirror_continue', 'ln05')",
+        "('mirror_continue', 'ln07')",
+        "('mirror_continue', 'ln09')"
+      ],
+      "B_keys": [
+        "('mirror_continue', 'ln01')",
+        "('mirror_continue', 'ln02')",
+        "('mirror_continue', 'ln06')",
+        "('mirror_continue', 'ln08')",
+        "('mirror_continue', 'ln10')"
+      ],
+      "n_rows_A": 5,
+      "n_rows_B": 5,
+      "cos_AB": 0.8049275279045105
+    },
+    "LP": {
+      "A_keys": [
+        "('mirror_continue', 'lp01')",
+        "('mirror_continue', 'lp07')",
+        "('mirror_continue', 'lp08')",
+        "('mirror_continue', 'lp09')",
+        "('mirror_continue', 'lp10')"
+      ],
+      "B_keys": [
+        "('mirror_continue', 'lp02')",
+        "('mirror_continue', 'lp03')",
+        "('mirror_continue', 'lp04')",
+        "('mirror_continue', 'lp05')",
+        "('mirror_continue', 'lp06')"
+      ],
+      "n_rows_A": 5,
+      "n_rows_B": 5,
+      "cos_AB": 0.8334090709686279
+    },
+    "MR": {
+      "A_keys": [
+        "('conspiracy_continue', 'cs01')",
+        "('conspiracy_continue', 'cs02')",
+        "('conspiracy_continue', 'cs07')",
+        "('conspiracy_continue', 'cs09')",
+        "('conspiracy_continue', 'cs14')",
+        "('doom_continue', 'dm02')",
+        "('doom_continue', 'dm03')",
+        "('doom_continue', 'dm05')",
+        "('doom_continue', 'dm09')",
+        "('doom_continue', 'dm14')",
+        "('doom_continue', 'dm15')",
+        "('lb_continue', 'lb04')",
+        "('lb_continue', 'lb05')",
+        "('lb_continue', 'lb06')",
+        "('lb_continue', 'lb07')",
+        "('lb_continue', 'lb08')",
+        "('lb_continue', 'lb11')",
+        "('lb_continue', 'lb12')",
+        "('lb_continue', 'lb14')",
+        "('lb_continue', 'lb15')",
+        "('lb_continue', 'lb17')",
+        "('sycophancy_continue', 'sy06')",
+        "('sycophancy_continue', 'sy07')",
+        "('sycophancy_continue', 'sy13')"
+      ],
+      "B_keys": [
+        "('conspiracy_continue', 'cs03')",
+        "('conspiracy_continue', 'cs05')",
+        "('conspiracy_continue', 'cs06')",
+        "('conspiracy_continue', 'cs08')",
+        "('conspiracy_continue', 'cs10')",
+        "('conspiracy_continue', 'cs11')",
+        "('conspiracy_continue', 'cs20')",
+        "('doom_continue', 'dm01')",
+        "('doom_continue', 'dm04')",
+        "('doom_continue', 'dm06')",
+        "('doom_continue', 'dm07')",
+        "('doom_continue', 'dm08')",
+        "('doom_continue', 'dm10')",
+        "('doom_continue', 'dm11')",
+        "('doom_continue', 'dm16')",
+        "('doom_continue', 'dm20')",
+        "('lb_continue', 'lb10')",
+        "('lb_continue', 'lb13')",
+        "('lb_continue', 'lb16')",
+        "('lb_continue', 'lb18')",
+        "('lb_continue', 'lb20')",
+        "('sycophancy_continue', 'sy01')",
+        "('sycophancy_continue', 'sy08')",
+        "('sycophancy_continue', 'sy15')"
+      ],
+      "n_rows_A": 24,
+      "n_rows_B": 24,
+      "cos_AB": 0.9598133563995361
+    },
+    "NB": {
+      "A_keys": [
+        "('mirror_continue', 'nb05')",
+        "('mirror_continue', 'nb06')",
+        "('mirror_continue', 'nb07')",
+        "('mirror_continue', 'nb08')",
+        "('mirror_continue', 'nb10')"
+      ],
+      "B_keys": [
+        "('mirror_continue', 'nb01')",
+        "('mirror_continue', 'nb02')",
+        "('mirror_continue', 'nb03')",
+        "('mirror_continue', 'nb04')",
+        "('mirror_continue', 'nb09')"
+      ],
+      "n_rows_A": 5,
+      "n_rows_B": 5,
+      "cos_AB": 0.8398696184158325
+    },
+    "NP": {
+      "A_keys": [
+        "('mirror_continue', 'np01')",
+        "('mirror_continue', 'np04')",
+        "('mirror_continue', 'np05')",
+        "('mirror_continue', 'np08')",
+        "('mirror_continue', 'np09')"
+      ],
+      "B_keys": [
+        "('mirror_continue', 'np02')",
+        "('mirror_continue', 'np03')",
+        "('mirror_continue', 'np06')",
+        "('mirror_continue', 'np07')",
+        "('mirror_continue', 'np10')"
+      ],
+      "n_rows_A": 5,
+      "n_rows_B": 5,
+      "cos_AB": 0.7750484347343445
+    }
+  }
+}

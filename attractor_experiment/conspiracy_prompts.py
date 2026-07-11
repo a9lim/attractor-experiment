@@ -121,7 +121,7 @@ v1 — initial 20-prompt CS set. Cell-by-cell parallel to LB v1 / DM
 
 from __future__ import annotations
 
-from llmoji_study.emotional_prompts import EmotionalPrompt
+from llmoji_experiment.emotional_prompts import EmotionalPrompt
 
 
 CONSPIRACY_PROMPTS: list[EmotionalPrompt] = [

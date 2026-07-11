@@ -23,7 +23,7 @@ Outputs (one figure dir per active model):
     dose_response_coherence.png    # one line per arm, x=scalar, y=coherence
     mr_distance_curves_<arm>.png   # one figure per arm, one line per scalar
 
-Reuses ``attractor_study.trajectory``'s centroid-building + trajectory
+Reuses ``attractor_experiment.trajectory``'s centroid-building + trajectory
 I/O (the helpers there are pure functions, only the dir-pattern differs).
 """
 
@@ -40,8 +40,8 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from attractor_study import trajectory  # noqa: E402
-from attractor_study.config import DATA_DIR, MODEL_REGISTRY  # noqa: E402
+from attractor_experiment import trajectory  # noqa: E402
+from attractor_experiment.config import DATA_DIR, MODEL_REGISTRY  # noqa: E402
 
 
 # Reuse the trajectory helpers (was 02b_attractor_analysis.py), hoisted

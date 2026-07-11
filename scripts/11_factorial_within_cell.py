@@ -45,8 +45,8 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from attractor_study import centroids as _H  # noqa: E402
-from attractor_study.config import DATA_DIR, MODEL_REGISTRY  # noqa: E402
+from attractor_experiment import centroids as _H  # noqa: E402
+from attractor_experiment.config import DATA_DIR, MODEL_REGISTRY  # noqa: E402
 
 # factorial label -> arm. lb_continue = SM (saturated form + mystical).
 ARMS = {

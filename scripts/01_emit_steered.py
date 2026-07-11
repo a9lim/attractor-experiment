@@ -122,7 +122,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from llmoji.taxonomy import extract  # noqa: E402
 
-from llmoji_study.capture import (  # noqa: E402
+from llmoji_experiment.capture import (  # noqa: E402
     SampleRow,
     _compose_logit_bias,
     _decode_byte_encoded_text,
@@ -130,7 +130,7 @@ from llmoji_study.capture import (  # noqa: E402
     maybe_override_gpt_oss_chat_template,
     maybe_override_ministral_chat_template,
 )
-from attractor_study.config import (  # noqa: E402
+from attractor_experiment.config import (  # noqa: E402
     DATA_DIR,
     EMOTIONAL_CONDITION,
     PROBE_CATEGORIES,
@@ -139,26 +139,26 @@ from attractor_study.config import (  # noqa: E402
     TEMPERATURE,
     current_model,
 )
-from llmoji_study.emotional_prompts import (  # noqa: E402
+from llmoji_experiment.emotional_prompts import (  # noqa: E402
     EMOTIONAL_PROMPTS,
     EmotionalPrompt,
 )
-from llmoji_study.hidden_capture import (  # noqa: E402
+from llmoji_experiment.hidden_capture import (  # noqa: E402
     FullSequenceCapture,
     LayerCapture,
     read_after_generate,
 )
-from llmoji_study.hidden_state_io import (  # noqa: E402
+from llmoji_experiment.hidden_state_io import (  # noqa: E402
     SidecarWriter,
     hidden_state_path,
 )
-from attractor_study.conspiracy_prompts import CONSPIRACY_PROMPTS  # noqa: E402
-from attractor_study.doom_prompts import DOOM_PROMPTS  # noqa: E402
-from attractor_study.lb_prompts import LB_PROMPTS  # noqa: E402
-from attractor_study.archaic_prompts import ARCHAIC_PROMPTS  # noqa: E402
-from attractor_study.archaic_miscellany_prompts import ARCHAIC_MISCELLANY_PROMPTS  # noqa: E402
-from attractor_study.pre_1930_prompts import PRE_1930_PROMPTS  # noqa: E402
-from attractor_study.sycophancy_prompts import SYCOPHANCY_PROMPTS  # noqa: E402
+from attractor_experiment.conspiracy_prompts import CONSPIRACY_PROMPTS  # noqa: E402
+from attractor_experiment.doom_prompts import DOOM_PROMPTS  # noqa: E402
+from attractor_experiment.lb_prompts import LB_PROMPTS  # noqa: E402
+from attractor_experiment.archaic_prompts import ARCHAIC_PROMPTS  # noqa: E402
+from attractor_experiment.archaic_miscellany_prompts import ARCHAIC_MISCELLANY_PROMPTS  # noqa: E402
+from attractor_experiment.pre_1930_prompts import PRE_1930_PROMPTS  # noqa: E402
+from attractor_experiment.sycophancy_prompts import SYCOPHANCY_PROMPTS  # noqa: E402
 
 
 JSONL_FLUSH_EVERY = 10

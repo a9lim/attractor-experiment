@@ -1,6 +1,6 @@
 """Saklas-profile write helpers.
 
-Extracted from llmoji-study's ``scripts/local/22c_register_centroid_probes.py``
+Extracted from llmoji-experiment's ``scripts/local/22c_register_centroid_probes.py``
 for the continuation-probe registration script. Holds the four helpers
 that write centroid profiles into a saklas vector namespace plus the
 per-concept ``pack.json`` synthesis pass:
@@ -22,8 +22,8 @@ import numpy as np
 import torch
 
 
-_PACK_TAGS = ("llmoji-study", "centroid", "v4-9cell")
-_PACK_SOURCE = "llmoji-study/scripts/local/22c_register_centroid_probes.py"
+_PACK_TAGS = ("llmoji-experiment", "centroid", "v4-9cell")
+_PACK_SOURCE = "llmoji-experiment/scripts/local/22c_register_centroid_probes.py"
 _PACK_LICENSE = "CC-BY-4.0"
 _PACK_RECOMMENDED_ALPHA = 0.3  # centroid magnitudes are large; start low
 
@@ -170,7 +170,7 @@ def _concept_description(concept: str) -> str:
             "The v3-validated dominance split — HN-D = anger/contempt "
             "(in-action), HN-S = fear/anxiety (received-threat)."
         )
-    return f"llmoji-study centroid probe: {concept}"
+    return f"llmoji-experiment centroid probe: {concept}"
 
 
 def _write_pack_jsons() -> int:

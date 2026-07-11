@@ -38,8 +38,8 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from attractor_study import basin_metrics as _audit  # noqa: E402
-from attractor_study.config import DATA_DIR, MODEL_REGISTRY  # noqa: E402
+from attractor_experiment import basin_metrics as _audit  # noqa: E402
+from attractor_experiment.config import DATA_DIR, MODEL_REGISTRY  # noqa: E402
 
 
 # (arm, factorial-label, form-level, content-level, is_anchor)

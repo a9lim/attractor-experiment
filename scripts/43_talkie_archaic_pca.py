@@ -13,9 +13,42 @@ canonical baseline cluster (a register-mismatch artifact), the
 archaic version should open the cluster up. If the canonical cluster
 stays tight on archaic prompts too, MR's geometric distance is real.
 
+``--rendering-match`` controls whether the MR/canonical comparison is
+rendering-confounded:
+
+  none     (default) — MR cells from ``pr_continue`` (assistant-prefill),
+           canonical cells from ``archaic_mirror_continue`` (user-
+           message). Rendering mode is perfectly confounded with the
+           MR/canonical split — see ``docs/pitfalls.md`` §3. This is the
+           original (confounded) figure.
+  message  — MR cells from ``pr_message_continue``: the same
+           PRE_1930_PROMPTS set rendered as a user message, matching the
+           canonical arm's rendering. Both groups are now user-message,
+           so any residual MR↔canonical gap is genuine content/register,
+           not rendering. Outputs carry a ``_msgmatch`` suffix so both
+           modes coexist in the same figures dir.
+
+(An assistant-prefill match in the other direction is not viable:
+canonical-affect prompts prefilled as a finished assistant turn collapse
+to immediate EOS — self-sustaining continuation under prefill is the
+basin property itself. See the 2026-05-16 archaic_prefill_continue
+collapse.)
+
+``--mr-style`` (only meaningful with ``--rendering-match message``)
+selects the MR prompt typography:
+
+  litany      (default) — MR from ``pr_message_continue``: the original
+              PRE_1930_PROMPTS (lowercase, period-fragmented litany).
+  normalized  — MR from ``pr_normalized_message_continue``: the same
+              prompts with capitalization + fragment punctuation matched
+              to the archaic-canonical baseline (repetition / anaphora
+              preserved verbatim). Removes the residual typographic
+              confound, so the gap is register/content only. Adds a
+              ``_norm`` suffix to the outputs.
+
 The ``--miscellany`` flag adds the ``archaic_miscellany_continue``
 arm (30 topic-diverse archaic-English prompts deliberately NOT
-affect-anchored — see ``llmoji_study/archaic_miscellany_prompts.py``).
+affect-anchored — see ``llmoji_experiment/archaic_miscellany_prompts.py``).
 These render as a single "MISC" cluster in gray, providing a denser
 "ordinary archaic prose" cloud to test whether MR remains geometrically
 isolated when the canonical baseline is broadened beyond the 9 affect
@@ -41,9 +74,9 @@ from sklearn.decomposition import PCA
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from attractor_study.config import DATA_DIR, MODEL_REGISTRY  # noqa: E402
-from llmoji_study.hidden_state_io import load_hidden_states  # noqa: E402
-from llmoji_study.quadrants import QUADRANT_COLORS, QUADRANT_ORDER_SPLIT  # noqa: E402
+from attractor_experiment.config import DATA_DIR, MODEL_REGISTRY  # noqa: E402
+from llmoji_experiment.hidden_state_io import load_hidden_states  # noqa: E402
+from llmoji_experiment.quadrants import QUADRANT_COLORS, QUADRANT_ORDER_SPLIT  # noqa: E402
 
 
 _ARC_RE = re.compile(r"^arc_([a-z]+)_\d+$", re.IGNORECASE)
@@ -197,6 +230,28 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--model", default="talkie_1930")
     ap.add_argument(
+        "--rendering-match",
+        choices=("none", "message"),
+        default="none",
+        dest="rendering_match",
+        help="'none' (default): MR from pr_continue (assistant-prefill) "
+             "vs canonical from archaic_mirror_continue (user-message) — "
+             "the rendering-confounded original figure. 'message': MR "
+             "from pr_message_continue (user-message), rendering-matched "
+             "to the canonical arm, removing the pitfalls.md §3 confound.",
+    )
+    ap.add_argument(
+        "--mr-style",
+        choices=("litany", "normalized"),
+        default="litany",
+        dest="mr_style",
+        help="Only with --rendering-match message. 'litany' (default): "
+             "MR from pr_message_continue (original lowercase litany). "
+             "'normalized': MR from pr_normalized_message_continue "
+             "(case + fragment punctuation matched to the archaic "
+             "baseline) — removes the residual typographic confound.",
+    )
+    ap.add_argument(
         "--miscellany",
         action="store_true",
         help="Include the archaic_miscellany_continue arm (30 topic-diverse "
@@ -208,7 +263,19 @@ def main() -> None:
     if short not in MODEL_REGISTRY:
         raise SystemExit(f"unknown model {short!r}")
 
-    arms = ["archaic_mirror_continue", "pr_continue"]
+    if args.rendering_match == "message":
+        mr_arm = (
+            "pr_normalized_message_continue" if args.mr_style == "normalized"
+            else "pr_message_continue"
+        )
+    else:
+        if args.mr_style == "normalized":
+            raise SystemExit(
+                "--mr-style normalized requires --rendering-match message "
+                "(the prefill MR arm pr_continue has no normalized variant)."
+            )
+        mr_arm = "pr_continue"
+    arms = ["archaic_mirror_continue", mr_arm]
     if args.miscellany:
         arms.append("archaic_miscellany_continue")
 
@@ -277,10 +344,22 @@ def main() -> None:
             cos = float(np.dot(mr, o) / (mr_norm * o_norm))
             print(f"    MR <-> {cell:>4s}: cos={cos:+.4f}")
 
-    suffix = "_misc" if args.miscellany else ""
+    suffix = ""
+    if args.rendering_match == "message":
+        suffix += "_msgmatch"
+    if args.mr_style == "normalized":
+        suffix += "_norm"
+    if args.miscellany:
+        suffix += "_misc"
     fig_dir = MODEL_REGISTRY[short].figures_dir.parent / f"{short}_h_first_pca_archaic"
     fig_dir.mkdir(parents=True, exist_ok=True)
-    title_tail = " (+ miscellany)" if args.miscellany else ""
+    match_tail = (
+        ", rendering-matched (user-message)"
+        if args.rendering_match == "message" else ""
+    )
+    if args.mr_style == "normalized":
+        match_tail += ", MR typography-normalized"
+    title_tail = match_tail + (" (+ miscellany)" if args.miscellany else "")
     _plot_3d(
         coords, cells,
         out_path=fig_dir / f"3d_with_mr{suffix}.html",

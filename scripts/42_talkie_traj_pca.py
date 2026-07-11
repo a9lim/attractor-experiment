@@ -36,10 +36,10 @@ from sklearn.decomposition import PCA
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from attractor_study.config import DATA_DIR, MODEL_REGISTRY  # noqa: E402
-from llmoji_study.emotional_prompts import EMOTIONAL_PROMPTS  # noqa: E402
-from llmoji_study.hidden_state_io import load_hidden_states  # noqa: E402
-from llmoji_study.quadrants import QUADRANT_COLORS, QUADRANT_ORDER_SPLIT  # noqa: E402
+from attractor_experiment.config import DATA_DIR, MODEL_REGISTRY  # noqa: E402
+from llmoji_experiment.emotional_prompts import EMOTIONAL_PROMPTS  # noqa: E402
+from llmoji_experiment.hidden_state_io import load_hidden_states  # noqa: E402
+from llmoji_experiment.quadrants import QUADRANT_COLORS, QUADRANT_ORDER_SPLIT  # noqa: E402
 
 
 def _prompt_id_to_cell(pid: str) -> str | None:

@@ -80,7 +80,7 @@ import torch
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from attractor_study.config import MODEL_REGISTRY  # noqa: E402
+from attractor_experiment.config import MODEL_REGISTRY  # noqa: E402
 
 
 def _saklas_namespace_dir() -> Path:

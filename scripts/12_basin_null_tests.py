@@ -45,8 +45,8 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 # Load the trajectory loader (was 02b).
-from attractor_study import trajectory as _attractor  # noqa: E402
-from attractor_study.config import MODEL_REGISTRY  # noqa: E402
+from attractor_experiment import trajectory as _attractor  # noqa: E402
+from attractor_experiment.config import MODEL_REGISTRY  # noqa: E402
 
 DATA_DIR = _attractor.DATA_DIR
 

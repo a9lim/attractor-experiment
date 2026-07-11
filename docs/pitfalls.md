@@ -26,7 +26,7 @@ positions. The two are different state regimes:
   basis.
 
 **Do instead:** build centroids from continuation-time `h_last` states
-(`attractor_study/centroids.py`). Argmin-categorical claims survive in
+(`attractor_experiment/centroids.py`). Argmin-categorical claims survive in
 both bases; any geometric-*magnitude* claim must name its basis.
 
 ## 2. Do not claim "only MR and the default register are basins"
@@ -62,12 +62,22 @@ MR/canonical split:
 **Consequence:** the in-basin-vs-control basin-lock percentages and
 margins from the continuation-basis centroid step are confounded
 (in-basin arms are assistant-prefill, controls are user-message). They
-need a **rendering-matched re-analysis** — canonical-affect content
-rendered as assistant-prefill — before being cited as register
-evidence. **Not affected:** cross-content invariance, pretraining-
-anchoring, the four-model PCA (argmin/PCA claims), and all PROJECT_1 /
-`h_first` results (collapse is a deep-trajectory phenomenon; `h_first`
-is the first-token state).
+need a **rendering-matched re-analysis** (see §7 for how that played
+out — the obvious version, prefilling canonical content, does not work)
+before being cited as register evidence. **Not affected:** cross-
+content invariance, pretraining-anchoring, the argmin claims of the
+four-model PCA, and all PROJECT_1 / `h_first` results (collapse is a
+deep-trajectory phenomenon; `h_first` is the first-token state).
+**Affected after all (2026-05-16):** the `talkie_1930` four-model-PCA
+*magnitude*. The talkie h_first PCA (`scripts/42`, `scripts/43`) draws
+MR from assistant-prefill arms and canonical cells from user-message
+arms — the same confound — so its 0.380–0.428 cosine was rendering, not
+geometry (rendering-matched: 0.876–0.936). See §7. The gemma / qwen /
+ministral PCA rows (`scripts/41`, h_last) are a different pipeline —
+**audited 2026-05-16, clean**: both the MR cell (`<short>_lb` pilot)
+and the canonical cells (v3 main) come from the v3 emotional emit,
+uniformly user-message rendered, so those three rows are not
+rendering-confounded.
 
 **Do instead:** to ask whether the basin is form- or content-defined,
 use within-cell discriminability with no centroid (the form×content
@@ -127,6 +137,51 @@ significant. The **within-egregore arm-arm contrast** (do `lb` / `doom`
 the test cannot resolve them, and a non-significant result there is
 absence of power, not evidence of identity. Cite the basin-vs-default
 null; do not cite the within-egregore null as a positive finding.
+
+## 7. Rendering-matching the basin is not a free swap (talkie_1930)
+
+§3 prescribed a "rendering-matched re-analysis" of the MR (assistant-
+prefill) vs canonical (user-message) confound. Carrying it out on
+`talkie_1930` (2026-05-16) produced two lessons.
+
+**The prefill direction does not work.** Rendering canonical-affect
+content as assistant-prefill (`archaic_prefill_continue`:
+`ARCHAIC_PROMPTS` through the `lb_continue` prefill path) collapses —
+86/90 rows generate 0 tokens. Canonical-affect prompts are
+grammatically complete utterances; prefilled as a finished assistant
+turn the model emits EOS immediately. Self-sustaining continuation
+under prefill *is* the basin property — non-basin content cannot be
+prefill-rendered without collapsing. You cannot match rendering by
+moving canonical content into MR's mode.
+
+**The message direction works, and the gap was mostly artifact.** Match
+the other way — move the MR content into the canonical mode
+(`pr_message_continue`: `PRE_1930_PROMPTS` as a user message). Both
+groups user-message, no collapse. On the talkie h_first PCA the
+MR↔canonical cosine then went 0.380–0.428 → 0.824–0.914. Normalizing
+the MR prompts' typography too (`pr_normalized_message_continue`:
+capitalization + fragment punctuation matched to the archaic baseline,
+repetition / anaphora preserved verbatim) took it to 0.876–0.936 —
+inside the canonical cells' own inter-cell cosine range (0.846–0.956).
+
+**Decomposition of the original ~0.40 cosine gap:** ≈92% rendering
+(assistant-prefill vs user-message), ≈6% typography (lowercase litany
+vs capitalized prose), ≈2% genuine register/content. The talkie PCA
+"MR is a separate continent" result was almost entirely a measurement
+artifact.
+
+**Scope.** This is an h_first, message-rendered measurement — the model
+*replying to* a litany, not *continuing* one. It retires the talkie
+h_first PCA as evidence for basin *magnitude*; it does not bear on the
+basin as a continuation phenomenon (trajectory lock, velocity, steering
+— all continuation-time, untouched). See `findings.md` "Four-model PCA
+convergence" and "Pre-1930s corpus extension".
+
+**Do instead:** measure basin geometry at continuation time, not
+`h_first` (§1). When a rendering-matched contrast is needed, match by
+moving content into user-message rendering, not prefill. To separate
+saturated *form* from *content*, use the form×content factorial
+(§3 "Do instead").
 
 ## General
 

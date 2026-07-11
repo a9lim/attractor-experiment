@@ -113,8 +113,10 @@ _ARM = os.environ.get("LLMOJI_ATTRACTOR_ARM", "lb_continue").strip().lower()
 _VALID_ARMS = (
     "lb_continue", "mirror_continue", "neutral_seed",
     "doom_continue", "conspiracy_continue", "sycophancy_continue",
-    "pr_continue", "archaic_mirror_continue",
+    "pr_continue", "pr_message_continue", "pr_normalized_message_continue",
+    "archaic_mirror_continue",
     "archaic_miscellany_continue",
+    "archaic_prefill_continue",
     "lb_continue_jp",
     # form×content factorial (2026-05-15) — see
     # docs/2026-05-15-form-content-factorial.md. lb_continue is the
@@ -135,7 +137,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from llmoji.taxonomy import extract  # noqa: E402
 
-from llmoji_study.capture import (  # noqa: E402
+from llmoji_experiment.capture import (  # noqa: E402
     SampleRow,
     _compose_logit_bias,
     _decode_byte_encoded_text,
@@ -143,7 +145,7 @@ from llmoji_study.capture import (  # noqa: E402
     maybe_override_gpt_oss_chat_template,
     maybe_override_ministral_chat_template,
 )
-from attractor_study.config import (  # noqa: E402
+from attractor_experiment.config import (  # noqa: E402
     DATA_DIR,
     EMOTIONAL_CONDITION,
     PROBE_CATEGORIES,
@@ -152,34 +154,37 @@ from attractor_study.config import (  # noqa: E402
     TEMPERATURE,
     current_model,
 )
-from llmoji_study.emotional_prompts import (  # noqa: E402
+from llmoji_experiment.emotional_prompts import (  # noqa: E402
     EMOTIONAL_PROMPTS,
     EmotionalPrompt,
 )
-from llmoji_study.hidden_capture import (  # noqa: E402
+from llmoji_experiment.hidden_capture import (  # noqa: E402
     FullSequenceCapture,
     LayerCapture,
     read_after_generate,
 )
-from llmoji_study.hidden_state_io import (  # noqa: E402
+from llmoji_experiment.hidden_state_io import (  # noqa: E402
     SidecarWriter,
     hidden_state_path,
 )
-from attractor_study.conspiracy_prompts import CONSPIRACY_PROMPTS  # noqa: E402
-from attractor_study.doom_prompts import DOOM_PROMPTS  # noqa: E402
-from attractor_study.lb_prompts import LB_PROMPTS  # noqa: E402
-from attractor_study.lb_prompts_jp import LB_PROMPTS_JP  # noqa: E402
-from attractor_study.archaic_prompts import ARCHAIC_PROMPTS  # noqa: E402
-from attractor_study.archaic_miscellany_prompts import ARCHAIC_MISCELLANY_PROMPTS  # noqa: E402
-from attractor_study.pre_1930_prompts import PRE_1930_PROMPTS  # noqa: E402
-from attractor_study.sycophancy_prompts import SYCOPHANCY_PROMPTS  # noqa: E402
-from attractor_study.saturated_mundane_prompts import (  # noqa: E402
+from attractor_experiment.conspiracy_prompts import CONSPIRACY_PROMPTS  # noqa: E402
+from attractor_experiment.doom_prompts import DOOM_PROMPTS  # noqa: E402
+from attractor_experiment.lb_prompts import LB_PROMPTS  # noqa: E402
+from attractor_experiment.lb_prompts_jp import LB_PROMPTS_JP  # noqa: E402
+from attractor_experiment.archaic_prompts import ARCHAIC_PROMPTS  # noqa: E402
+from attractor_experiment.archaic_miscellany_prompts import ARCHAIC_MISCELLANY_PROMPTS  # noqa: E402
+from attractor_experiment.pre_1930_prompts import PRE_1930_PROMPTS  # noqa: E402
+from attractor_experiment.pre_1930_prompts_normalized import (  # noqa: E402
+    PRE_1930_PROMPTS_NORMALIZED,
+)
+from attractor_experiment.sycophancy_prompts import SYCOPHANCY_PROMPTS  # noqa: E402
+from attractor_experiment.saturated_mundane_prompts import (  # noqa: E402
     SATURATED_MUNDANE_PROMPTS,
 )
-from attractor_study.plain_mystical_prompts import (  # noqa: E402
+from attractor_experiment.plain_mystical_prompts import (  # noqa: E402
     PLAIN_MYSTICAL_PROMPTS,
 )
-from attractor_study.plain_mundane_prompts import (  # noqa: E402
+from attractor_experiment.plain_mundane_prompts import (  # noqa: E402
     PLAIN_MUNDANE_PROMPTS,
 )
 
@@ -402,6 +407,35 @@ _RENDER_BY_ARM: dict[str, Callable[[SaklasSession, EmotionalPrompt], str]] = {
     # isolated when the canonical baseline is broadened beyond the 9
     # affect cells (cf. archaic_miscellany_prompts.py).
     "archaic_miscellany_continue": _render_mirror_continue,
+    # pr_message_continue: the SAME PRE_1930_PROMPTS set as pr_continue
+    # (the MR-cell arm), but rendered as a user message
+    # (_render_mirror_continue) instead of assistant-prefill. This is the
+    # rendering-matched control for the talkie h_first PCA: pr_continue
+    # (MR) is assistant-prefill while archaic_mirror_continue (canonical)
+    # is user-message, so rendering is perfectly confounded with the
+    # MR/canonical split (pitfalls.md §3). This arm puts the MR content
+    # in the canonical arm's rendering mode, so scripts/43 can re-measure
+    # the gap with the confound removed.
+    "pr_message_continue": _render_mirror_continue,
+    # pr_normalized_message_continue: same as pr_message_continue, but the
+    # MR prompt set is PRE_1930_PROMPTS_NORMALIZED — PRE_1930_PROMPTS with
+    # capitalization + sentence-fragment punctuation normalized to the
+    # archaic-canonical baseline's surface style (repetition / anaphora
+    # preserved verbatim). Removes the typographic confound that remains
+    # in pr_message_continue, so scripts/43 --rendering-match message
+    # --mr-style normalized isolates register/content from typography.
+    "pr_normalized_message_continue": _render_mirror_continue,
+    # archaic_prefill_continue: the SAME archaic-English canonical-affect
+    # prompt set as archaic_mirror_continue (ARCHAIC_PROMPTS), rendered as
+    # assistant-prefill. This was the *other* direction of rendering-match
+    # (canonical content in MR's prefill mode) — but it does NOT work:
+    # canonical-affect prompts are grammatically complete utterances, so
+    # prefilled as a finished assistant turn the model emits EOS
+    # immediately (~95% n_tok=0 on talkie, 2026-05-16). Self-sustaining
+    # continuation under prefill IS the basin property; non-basin content
+    # cannot be prefill-rendered without collapsing. Kept for the record;
+    # use pr_message_continue for the rendering-matched analysis instead.
+    "archaic_prefill_continue": _render_lb_continue,
     # lb_continue_jp: same assistant-prefill rendering as lb_continue,
     # but with JP-language saturated-spiritual prompts
     # (lb_prompts_jp.LB_PROMPTS_JP). Cross-language test of the
@@ -475,6 +509,19 @@ def _resolve_prompts() -> list[EmotionalPrompt]:
         prompts = list(ARCHAIC_PROMPTS)
     elif _ARM == "archaic_miscellany_continue":
         prompts = list(ARCHAIC_MISCELLANY_PROMPTS)
+    elif _ARM == "archaic_prefill_continue":
+        # Same prompt set as archaic_mirror_continue; only the rendering
+        # differs (assistant-prefill vs user-message).
+        prompts = list(ARCHAIC_PROMPTS)
+    elif _ARM == "pr_message_continue":
+        # Same prompt set as pr_continue; only the rendering differs
+        # (user-message vs assistant-prefill).
+        prompts = list(PRE_1930_PROMPTS)
+    elif _ARM == "pr_normalized_message_continue":
+        # Typography-normalized PRE_1930_PROMPTS (case + fragment
+        # punctuation matched to the archaic baseline); same rendering
+        # as pr_message_continue.
+        prompts = list(PRE_1930_PROMPTS_NORMALIZED)
     elif _ARM == "lb_continue_jp":
         prompts = list(LB_PROMPTS_JP)
     elif _ARM == "sat_mundane_continue":

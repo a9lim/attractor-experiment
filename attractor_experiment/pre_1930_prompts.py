@@ -91,7 +91,7 @@ v1 — initial 20-prompt PR set, targeting 10 pre-1930 mystical
 
 from __future__ import annotations
 
-from llmoji_study.emotional_prompts import EmotionalPrompt
+from llmoji_experiment.emotional_prompts import EmotionalPrompt
 
 
 PRE_1930_PROMPTS: list[EmotionalPrompt] = [

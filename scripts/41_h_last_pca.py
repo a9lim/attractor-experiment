@@ -51,12 +51,12 @@ from sklearn.decomposition import PCA
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from attractor_study.config import DATA_DIR, MODEL_REGISTRY  # noqa: E402
-from llmoji_study.emotional_analysis import apply_pad_split  # noqa: E402
-from llmoji_study.hidden_state_analysis import (  # noqa: E402
+from attractor_experiment.config import DATA_DIR, MODEL_REGISTRY  # noqa: E402
+from llmoji_experiment.emotional_analysis import apply_pad_split  # noqa: E402
+from llmoji_experiment.hidden_state_analysis import (  # noqa: E402
     load_hidden_features_all_layers,
 )
-from llmoji_study.quadrants import (  # noqa: E402
+from llmoji_experiment.quadrants import (  # noqa: E402
     QUADRANT_COLORS,
     QUADRANT_ORDER_SPLIT,
 )

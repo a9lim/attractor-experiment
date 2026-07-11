@@ -1,4 +1,4 @@
-# attractor-study
+# attractor-experiment
 
 Does a **meta-register attractor basin** exist in the residual stream of
 large language models? This repo investigates the MR basin: a region of
@@ -6,7 +6,7 @@ hidden-state space, defined by saturated *structural form* rather than
 affective content, that long free-form generations fall into and lock
 onto across model families, content domains, and post-training regimes.
 
-Spun off from [`llmoji-study`](https://github.com/a9lim/llmoji-study) on
+Spun off from [`llmoji-experiment`](https://github.com/a9lim/llmoji-experiment) on
 2026-05-15. That repo asks whether kaomoji choice tracks emotional
 functional state; this one asks about the basin. The two share the
 hidden-state capture engine but the research questions are orthogonal.
@@ -35,13 +35,13 @@ Live numbers: [`docs/findings.md`](docs/findings.md).
 
 ## Reproducing
 
-The shared engine lives in `llmoji-study` (model registry, capture,
+The shared engine lives in `llmoji-experiment` (model registry, capture,
 sidecar IO, quadrant taxonomy). Install it editable first:
 
 ```bash
-python -m venv .venv && source .venv/bin/activate
-pip install -e ../llmoji        # contributor package (taxonomy)
-pip install -e ../llmoji-study  # shared hidden-state engine
+source .venv/bin/activate  # .venv -> ../.venvs/attractor-experiment
+pip install -e ../../llmoji        # contributor package (taxonomy)
+pip install -e ../llmoji-experiment  # shared hidden-state engine
 pip install -e .
 ```
 
@@ -49,13 +49,13 @@ Emit attractor trajectories, then analyse:
 
 ```bash
 LLMOJI_MODEL=gemma .venv/bin/python scripts/00_emit_attractor.py --arm lb_continue
-.venv/bin/python -m attractor_study.trajectory
+.venv/bin/python -m attractor_experiment.trajectory
 ```
 
 The reusable analysis libraries (`trajectory`, `centroids`,
 `basin_metrics`, `two_qwen`, `saklas_profiles`) live in the
-`attractor_study/` package; the first three are also runnable as
-`python -m attractor_study.<module>`. Numbered one-off analyses live in
+`attractor_experiment/` package; the first three are also runnable as
+`python -m attractor_experiment.<module>`. Numbered one-off analyses live in
 `scripts/`.
 
 ## Docs map
@@ -67,7 +67,7 @@ The reusable analysis libraries (`trajectory`, `centroids`,
 
 ## Related
 
-- [`llmoji-study`](https://github.com/a9lim/llmoji-study): the kaomoji
+- [`llmoji-experiment`](https://github.com/a9lim/llmoji-experiment): the kaomoji
   research repo; provides the shared hidden-state engine.
 - [`saklas`](https://github.com/a9lim/saklas): activation steering and
   trait monitoring engine.

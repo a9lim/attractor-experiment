@@ -51,14 +51,14 @@ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from attractor_study import trajectory as _attractor  # noqa: E402
+from attractor_experiment import trajectory as _attractor  # noqa: E402
 
 # Reuse the centroids loaders (was 40b) so the LDA training set is
 # byte-identical to the centroid-construction set, modulo the A/B split.
-from attractor_study import centroids as _holdout  # noqa: E402
+from attractor_experiment import centroids as _holdout  # noqa: E402
 
-from attractor_study.config import DATA_DIR, FIGURES_DIR, MODEL_REGISTRY  # noqa: E402
-from llmoji_study.quadrants import QUADRANT_COLORS  # noqa: E402
+from attractor_experiment.config import DATA_DIR, FIGURES_DIR, MODEL_REGISTRY  # noqa: E402
+from llmoji_experiment.quadrants import QUADRANT_COLORS  # noqa: E402
 
 
 # ----- training rows -------------------------------------------------

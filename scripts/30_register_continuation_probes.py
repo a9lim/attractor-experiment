@@ -51,8 +51,8 @@ REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO))
 
 # Saklas-profile save helpers + pack.json synthesis (extracted from 22c).
-from attractor_study import saklas_profiles as _r22c  # noqa: E402
-from attractor_study.config import DATA_DIR, resolve_model  # noqa: E402
+from attractor_experiment import saklas_profiles as _r22c  # noqa: E402
+from attractor_experiment.config import DATA_DIR, resolve_model  # noqa: E402
 
 DEFAULT_MODELS = ("gemma", "qwen", "ministral")
 

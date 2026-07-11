@@ -54,13 +54,13 @@ import numpy as np
 import pandas as pd
 from sklearn.decomposition import PCA
 
-from attractor_study.config import DATA_DIR, MODEL_REGISTRY  # noqa: E402
-from llmoji_study.emotional_analysis import apply_pad_split  # noqa: E402
-from llmoji_study.hidden_state_analysis import (  # noqa: E402
+from attractor_experiment.config import DATA_DIR, MODEL_REGISTRY  # noqa: E402
+from llmoji_experiment.emotional_analysis import apply_pad_split  # noqa: E402
+from llmoji_experiment.hidden_state_analysis import (  # noqa: E402
     load_hidden_features_all_layers,
 )
-from llmoji_study.hidden_state_io import load_hidden_states  # noqa: E402
-from llmoji_study.quadrants import QUADRANT_COLORS  # noqa: E402
+from llmoji_experiment.hidden_state_io import load_hidden_states  # noqa: E402
+from llmoji_experiment.quadrants import QUADRANT_COLORS  # noqa: E402
 from llmoji.taxonomy import canonicalize_kaomoji, is_kaomoji_candidate  # noqa: E402
 
 

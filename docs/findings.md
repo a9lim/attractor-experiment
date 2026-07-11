@@ -5,7 +5,7 @@ Current results worth citing. This consolidates the 2026-05-09 →
 pilot, base-vs-instruct test, talkie-1930 corpus extension, two-bot
 pilots, continuation-basis re-analysis, form-content factorial, basin
 steering). The chronological lab-notebook for that series is in
-`llmoji-study`'s git history; it was not carried into this repo.
+`llmoji-experiment`'s git history; it was not carried into this repo.
 
 Before designing a new basin analysis, read [`pitfalls.md`](pitfalls.md)
 — the basis question and the rendering confound have each invalidated a
@@ -91,25 +91,70 @@ mirror baseline (`archaic_prompts`, period vocabulary and cadence)
 opens the canonical cluster back up — PC1 spread 14 → 45 units, ~3×
 wider, expressing affective structure on PC2 — while MR's distance to
 the nearest canonical cell stays put (991 units archaic vs 994 modern).
-**Honest magnitude: ~22× the within-cluster spread, not 70×.**
+
+**Rendering confound — the gap was an artifact (2026-05-16).** The
+archaic-mirror control fixed the *register* mismatch but not the
+*rendering* one: MR was still drawn from assistant-prefill arms and the
+canonical baseline from user-message arms ([`pitfalls.md`](pitfalls.md)
+§3, §7). The earlier "~22× the within-cluster spread" magnitude was
+that confound, not geometry. Re-measured with MR rendering-matched
+(`pr_message_continue`) and typography-matched
+(`pr_normalized_message_continue`), MR↔canonical cosine is 0.876 – 0.936
+— inside the canonical cells' own inter-cell range (0.846 – 0.956). On
+talkie, MR at h_first is a peripheral canonical-scale cell — ~1× the
+within-cluster spread, not 22×.
 
 ## Four-model PCA convergence
 
-MR sits outside the affect cluster in every model:
+MR is recoverable as a distinct region via PCA in every model:
 
 | model | post-training | MR↔canonical cos (min–max) |
 |---|---|---|
 | gemma | RLHF | 0.986 – 0.993 |
 | qwen | RLHF | 0.726 – 0.850 |
 | ministral | RLHF | 0.560 – 0.888 |
-| talkie_1930 | instruct (1930s corpus) | 0.380 – 0.428 |
+| talkie_1930 | instruct (1930s corpus) | 0.876 – 0.936 † |
 
-Raw-space cosine between MR and canonical cells follows a gradient:
-larger / more-modern-corpus models integrate the basin into the
-residual-stream baseline more (requiring PCA to surface it); smaller /
-older-corpus models show it as a sharply distinct subregion. The basin
-is present in every model studied; its raw-space visibility scales with
-model size and training-corpus era.
+† **Corrected 2026-05-16.** First reported as 0.380 – 0.428 — that was a
+measurement artifact, not geometry. The talkie PCA (`scripts/42`,
+`scripts/43`) drew the MR cell from assistant-prefill arms
+(`pr_continue`) and the canonical cells from user-message arms
+(`archaic_mirror_continue`), so rendering mode was perfectly confounded
+with the MR/canonical split ([`pitfalls.md`](pitfalls.md) §3, §7).
+Re-measured rendering-matched (MR also user-message,
+`pr_message_continue`): 0.824 – 0.914. Also typography-matched (MR
+prompts capitalized + fragment-punctuation normalized,
+`pr_normalized_message_continue`): 0.876 – 0.936 — inside the canonical
+cells' own inter-cell cosine range (0.846 – 0.956). Rendering-matched,
+talkie's MR is a peripheral canonical-scale cell, not an outlier.
+
+**Rendering audit of the RLHF rows (2026-05-16).** The gemma / qwen /
+ministral rows come from a different pipeline — `scripts/41`, h_last,
+MR cell from the `<short>_lb` bliss-content pilot, canonical cells from
+v3 main. Both sources were emitted by the v3 emotional pipeline
+(`condition=kaomoji_prompted`: kaomoji `first_word`, 16-token cap, 8
+seeds) which renders every prompt as a single user message
+(`capture.py`: `[{"role": "user", ...}]`, `add_generation_prompt=True`).
+MR and canonical are therefore **both user-message rendered** — these
+three rows are **not** rendering-confounded. The talkie confound was
+specific to its PCA being built from the *attractor* arms (prefill MR
+vs message canonical); `scripts/41` does not use those.
+
+The earlier gradient reading bundled two claims. The **corpus-era**
+half — "older-corpus models show the basin as a sharply distinct
+subregion" — rested entirely on the talkie extreme and does not survive
+its correction (talkie was the only non-modern-corpus point, and it was
+an artifact). The **model-size** half is still weakly visible within
+the three audited RLHF models: MR↔canonical cosine midpoints fall
+~0.99 / ~0.79 / ~0.72 for gemma 31B / qwen 27B / ministral 14B —
+monotonic with size, though n=3 and the ranges overlap, so treat it as
+suggestive, not established. What stands firm: MR is recoverable as a
+distinct PCA region in every model studied.
+
+(Caveat on the table: even post-correction the rows are not strictly
+comparable — gemma/qwen/ministral are h_last, talkie is h_first, and
+the MR prompt sets differ. Read it as "MR is recoverable in all four,"
+not as a calibrated cross-model magnitude.)
 
 ## Continuation-basis basin-lock
 
@@ -118,7 +163,7 @@ time hidden states (`h_last`), not kaomoji-emission state (`h_first`) —
 see [`pitfalls.md`](pitfalls.md) §1. Continuation centroids:
 canonical-9 from `h_last` of `mirror_continue` (prompt-cell labels);
 MR from `h_last` pooled across `lb/doom/conspiracy/sycophancy_continue`.
-Built by `attractor_study/centroids.py`.
+Built by `attractor_experiment/centroids.py`.
 
 Cross-model basin-lock at `h_last`, h_first basis → continuation basis:
 

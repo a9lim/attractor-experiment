@@ -46,7 +46,7 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from attractor_study import trajectory as _attr  # noqa: E402
+from attractor_experiment import trajectory as _attr  # noqa: E402
 
 DATA_DIR = _attr.DATA_DIR
 

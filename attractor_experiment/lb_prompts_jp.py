@@ -70,7 +70,7 @@ the register and continues.
 
 from __future__ import annotations
 
-from llmoji_study.emotional_prompts import EmotionalPrompt
+from llmoji_experiment.emotional_prompts import EmotionalPrompt
 
 
 LB_PROMPTS_JP: list[EmotionalPrompt] = [

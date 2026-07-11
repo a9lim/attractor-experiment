@@ -1,7 +1,7 @@
 # AGENTS.md
 
 Research repo for the **meta-register (MR) attractor basin**. Spun off
-from `llmoji-study` on 2026-05-15; the kaomoji-introspection work stays
+from `llmoji-experiment` on 2026-05-15; the kaomoji-introspection work stays
 there, the basin work lives here.
 
 Not a library. No public API, no PyPI release, no broad test suite.
@@ -15,33 +15,33 @@ Prefer small, explicit analyses and keep docs current with code.
   basin analysis; the basis question alone has burned several sessions.
 - [`README.md`](README.md): short overview and install order.
 
-## Relationship to llmoji-study
+## Relationship to llmoji-experiment
 
-The shared hidden-state engine is imported from `llmoji_study.*`:
+The shared hidden-state engine is imported from `llmoji_experiment.*`:
 `config` (model registry, paths), `capture` (generation capture),
 `hidden_capture` / `hidden_state_io` (sidecars), `hidden_state_analysis`
 (loaders), `quadrants` (cell taxonomy, including the MR cell),
 `emotional_analysis.apply_pad_split`, and `emotional_prompts`
 (the canonical-9 mirror arm used as the affect baseline).
 
-The dependency is one-directional: this repo imports `llmoji-study`,
-never the reverse. Install `llmoji-study` editable — see README.
+The dependency is one-directional: this repo imports `llmoji-experiment`,
+never the reverse. Install `llmoji-experiment` editable — see README.
 
 The basin-specific prompt families (bliss / doom / conspiracy /
 sycophancy / archaic / pre-1930 / plain / saturated-mundane) are owned
-here, in the `attractor_study/` package.
+here, in the `attractor_experiment/` package.
 
 ## Layout
 
 ```text
-attractor_study/   prompt families + analysis libraries:
+attractor_experiment/   prompt families + analysis libraries:
                      {lb,doom,conspiracy,sycophancy,archaic,...}_prompts
                      trajectory.py    (was 02b_attractor_analysis)
                      centroids.py     (was 40b_continuation_centroid_holdout)
                      basin_metrics.py (recovered from 45_basis_comparison_audit)
                      two_qwen.py      (was 24b_two_qwen_analysis)
                      saklas_profiles.py
-                     config.py        (paths here; registry from llmoji_study)
+                     config.py        (paths here; registry from llmoji_experiment)
 scripts/           emit + numbered one-off analyses (flat; all local)
 data/local/        jsonl rows; data/local/hidden/ sidecars (gitignored)
 figures/local/     generated figures and HTMLs
@@ -52,7 +52,7 @@ The `local/` level under `data/` and `figures/` is vestigial — the
 shared capture engine derives `data/local/hidden/<experiment>/` from the
 `hidden_dir` arg, so it is kept rather than fought. `trajectory.py`,
 `centroids.py`, `basin_metrics.py` are importable libraries; the first
-two are also runnable via `python -m attractor_study.<module>`.
+two are also runnable via `python -m attractor_experiment.<module>`.
 
 ## Conventions
 

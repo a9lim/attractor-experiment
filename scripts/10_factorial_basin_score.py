@@ -23,8 +23,8 @@ from ``45_basis_comparison_audit.py`` so the metric is identical to
 the §1.6 / Session-3 basin audits.
 
 Usage:
-  .venv/bin/python scripts/local/02f_factorial_basin_score.py --model gemma
-  .venv/bin/python scripts/local/02f_factorial_basin_score.py --all-models
+  python scripts/local/02f_factorial_basin_score.py --model gemma
+  python scripts/local/02f_factorial_basin_score.py --all-models
 """
 
 from __future__ import annotations

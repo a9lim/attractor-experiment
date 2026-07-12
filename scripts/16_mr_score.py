@@ -29,7 +29,7 @@ with replacement.
 
 Usage::
 
-    .venv/bin/python scripts/local/46b_mr_score_v2.py \\
+    python scripts/local/46b_mr_score_v2.py \\
         --baseline-states data/local/scripture_mr/chunk_states_baseline_gemma.npz \\
         --calibration-states data/local/scripture_mr/chunk_states_calibration_gemma.npz \\
         --scripture-states data/local/scripture_mr/chunk_states_scripture_gemma.npz \\

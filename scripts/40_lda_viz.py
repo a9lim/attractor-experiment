@@ -33,8 +33,8 @@ Output:
   data/local/basin_stats/{model}_lda_separation_continuation.json
 
 Usage:
-  .venv/bin/python scripts/local/42b_lda_attractor_viz_continuation.py --model gemma
-  .venv/bin/python scripts/local/42b_lda_attractor_viz_continuation.py --all-models
+  python scripts/local/42b_lda_attractor_viz_continuation.py --model gemma
+  python scripts/local/42b_lda_attractor_viz_continuation.py --all-models
 """
 
 from __future__ import annotations

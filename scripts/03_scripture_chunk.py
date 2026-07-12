@@ -18,7 +18,7 @@ reproducibility.
 
 Usage::
 
-    .venv/bin/python scripts/local/44a_scripture_chunk.py \\
+    python scripts/local/44a_scripture_chunk.py \\
         --corpus-dir ../a9lim.github.io/scripture/text \\
         --output data/scripture_chunks.jsonl \\
         [--chunks-per-source 50] \\

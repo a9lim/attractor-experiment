@@ -33,8 +33,8 @@ only the vector direction changes.
 
 Usage::
 
-    .venv/bin/python scripts/local/49_register_continuation_probes.py
-    .venv/bin/python scripts/local/49_register_continuation_probes.py --models gemma
+    python scripts/local/49_register_continuation_probes.py
+    python scripts/local/49_register_continuation_probes.py --models gemma
 """
 
 from __future__ import annotations

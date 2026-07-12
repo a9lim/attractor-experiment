@@ -30,8 +30,8 @@ models only give a clean read if their collapse rate is low (qwen /
 ministral continue coherently; gemma-instruct does not).
 
 Usage:
-  .venv/bin/python scripts/local/02g_factorial_within_cell.py --model gemma_base
-  .venv/bin/python scripts/local/02g_factorial_within_cell.py --all-models
+  python scripts/local/02g_factorial_within_cell.py --model gemma_base
+  python scripts/local/02g_factorial_within_cell.py --all-models
 """
 
 from __future__ import annotations

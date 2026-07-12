@@ -30,7 +30,7 @@ Uses the held-out A-half centroids from ``40_centroid_holdout.py``.
 
 Usage::
 
-    .venv/bin/python scripts/local/43_velocity_toward_centroid.py \\
+    python scripts/local/43_velocity_toward_centroid.py \\
         --model gemma [--all-models] [--centroid-half A]
 """
 

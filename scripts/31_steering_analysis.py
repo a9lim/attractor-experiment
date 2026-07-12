@@ -30,7 +30,7 @@ a word_tri or alpha_frac collapse.
 
 Usage::
 
-    .venv/bin/python scripts/local/50_steering_continuation_analysis.py --model gemma
+    python scripts/local/50_steering_continuation_analysis.py --model gemma
 """
 
 from __future__ import annotations

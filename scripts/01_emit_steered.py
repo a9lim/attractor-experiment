@@ -29,7 +29,7 @@ from negative through zero through positive}, e.g.
       LLMOJI_ATTRACTOR_ARM=$arm \
       LLMOJI_STEER_SCALAR=$alpha \
       LLMOJI_STEER_VECTOR=mr.nb \
-      .venv/bin/python scripts/local/03_emit_attractor_steered.py
+      python scripts/local/03_emit_attractor_steered.py
     done
   done
 

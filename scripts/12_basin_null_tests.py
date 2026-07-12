@@ -28,8 +28,8 @@ Output: ``data/local/basin_stats/{model}_null_and_ci.json``.
 
 Usage::
 
-    .venv/bin/python scripts/local/41_basin_null_tests.py --model gemma
-    .venv/bin/python scripts/local/41_basin_null_tests.py --all-models \\
+    python scripts/local/41_basin_null_tests.py --model gemma
+    python scripts/local/41_basin_null_tests.py --all-models \\
         [--n-bootstrap 1000] [--n-permute 10000] [--seed 0]
 """
 

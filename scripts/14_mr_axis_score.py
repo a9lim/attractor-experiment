@@ -56,7 +56,7 @@ CLI
 
 ::
 
-    .venv/bin/python scripts/local/30_mr_axis_score.py \
+    python scripts/local/30_mr_axis_score.py \
         --input data/some_text.jsonl \
         --output data/some_text_mr_scores.jsonl \
         --model gemma            # default

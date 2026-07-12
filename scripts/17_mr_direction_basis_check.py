@@ -26,7 +26,7 @@ Three directions are compared per model:
 
 Usage::
 
-    .venv/bin/python scripts/local/47_mr_direction_basis_check.py
+    python scripts/local/47_mr_direction_basis_check.py
 """
 
 from __future__ import annotations

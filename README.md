@@ -39,7 +39,7 @@ The shared engine lives in `llmoji-experiment` (model registry, capture,
 sidecar IO, quadrant taxonomy). Install it editable first:
 
 ```bash
-source .venv/bin/activate  # .venv -> ../.venvs/attractor-experiment
+python --version  # system Python 3.12
 pip install -e ../../llmoji        # contributor package (taxonomy)
 pip install -e ../llmoji-experiment  # shared hidden-state engine
 pip install -e .
@@ -48,8 +48,8 @@ pip install -e .
 Emit attractor trajectories, then analyse:
 
 ```bash
-LLMOJI_MODEL=gemma .venv/bin/python scripts/00_emit_attractor.py --arm lb_continue
-.venv/bin/python -m attractor_experiment.trajectory
+LLMOJI_MODEL=gemma python scripts/00_emit_attractor.py --arm lb_continue
+python -m attractor_experiment.trajectory
 ```
 
 The reusable analysis libraries (`trajectory`, `centroids`,

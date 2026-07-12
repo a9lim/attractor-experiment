@@ -38,7 +38,7 @@ Output:
     manifest.json     splits, layer set, hidden_dim, sample strategy
 
 Usage:
-  .venv/bin/python scripts/local/40b_continuation_centroid_holdout.py \\
+  python scripts/local/40b_continuation_centroid_holdout.py \\
       --model gemma [--seed 0] [--all-models] [--strategy h_last]
 """
 

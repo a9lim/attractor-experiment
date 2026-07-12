@@ -35,7 +35,7 @@ Outputs:
 
 CLI::
 
-    .venv/bin/python scripts/local/23h_h_last_pca_with_mr.py \
+    python scripts/local/23h_h_last_pca_with_mr.py \
         --model gemma
 """
 

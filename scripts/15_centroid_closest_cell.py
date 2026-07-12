@@ -33,7 +33,7 @@ Output JSONL: input fields plus
 
 CLI::
 
-    .venv/bin/python scripts/local/30b_centroid_closest_cell.py \\
+    python scripts/local/30b_centroid_closest_cell.py \\
         --input data/scripture_chunks.jsonl \\
         --output data/local/scripture_mr/scripture_closest_cell_gemma.jsonl \\
         --model gemma \\

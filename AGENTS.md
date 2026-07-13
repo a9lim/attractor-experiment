@@ -15,17 +15,13 @@ Prefer small, explicit analyses and keep docs current with code.
   basin analysis; the basis question alone has burned several sessions.
 - [`README.md`](README.md): short overview and install order.
 
-## Relationship to llmoji-experiment
+## Shared workspace infrastructure
 
-The shared hidden-state engine is imported from `llmoji_experiment.*`:
-`config` (model registry, paths), `capture` (generation capture),
-`hidden_capture` / `hidden_state_io` (sidecars), `hidden_state_analysis`
-(loaders), `quadrants` (cell taxonomy, including the MR cell),
-`emotional_analysis.apply_pad_split`, and `emotional_prompts`
-(the canonical-9 mirror arm used as the affect baseline).
-
-The dependency is one-directional: this repo imports `llmoji-experiment`,
-never the reverse. Install `llmoji-experiment` editable — see README.
+This repo is independent of every sibling experiment. Shared model metadata,
+generation capture, hidden-state sidecars/loaders, the cell taxonomy, and the
+canonical mirror prompts come from the workspace-root
+`transformer_experiments` package. Attractor-owned paths and model handles are
+derived locally in `attractor_experiment/config.py`.
 
 The basin-specific prompt families (bliss / doom / conspiracy /
 sycophancy / archaic / pre-1930 / plain / saturated-mundane) are owned
@@ -41,15 +37,15 @@ attractor_experiment/   prompt families + analysis libraries:
                      basin_metrics.py (recovered from 45_basis_comparison_audit)
                      two_qwen.py      (was 24b_two_qwen_analysis)
                      saklas_profiles.py
-                     config.py        (paths here; registry from llmoji_experiment)
+                     config.py        (local paths over the root registry)
 scripts/           emit + numbered one-off analyses (flat; all local)
 data/local/        jsonl rows; data/local/hidden/ sidecars (gitignored)
 figures/local/     generated figures and HTMLs
 docs/              findings.md, pitfalls.md
 ```
 
-The `local/` level under `data/` and `figures/` is vestigial — the
-shared capture engine derives `data/local/hidden/<experiment>/` from the
+The `local/` level under `data/` and `figures/` is vestigial — the root-shared
+capture engine derives `data/local/hidden/<experiment>/` from the
 `hidden_dir` arg, so it is kept rather than fought. `trajectory.py`,
 `centroids.py`, `basin_metrics.py` are importable libraries; the first
 two are also runnable via `python -m attractor_experiment.<module>`.

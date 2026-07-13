@@ -1,10 +1,8 @@
 """Basin-lock metrics in the continuation centroid basis.
 
-Reconstructed from ``45_basis_comparison_audit.py`` (llmoji-experiment), which
-was lost in the 2026-05-15 repo split purge before it was recognised as a
-live dependency of the form-content factorial scorer. Source recovered
-from the surviving ``.pyc`` bytecode; the three helpers below are the
-ones the factorial scorer imports.
+Recovered during the 2026-05-15 repo split after the original analysis script
+was purged. This local module is now the source of truth for the three helpers
+the form-content factorial scorer imports.
 
 The original script also compared the h_first vs continuation basis
 (PROJECT_2 §1.6). That comparison is historical — the h_first holdout
@@ -25,7 +23,7 @@ import json
 import numpy as np
 
 from attractor_experiment.config import DATA_DIR
-from llmoji_experiment.hidden_state_io import load_hidden_states
+from transformer_experiments.hidden_state_io import load_hidden_states
 
 # Centroid-basis name -> holdout directory under data/local/.
 # h_first ("centroid_holdout") was retired in the 2026-05-15 split; the

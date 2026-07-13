@@ -2,14 +2,14 @@
 name = "attractor-experiment"
 version = "0.1.0"
 description = "Does a meta-register attractor basin exist in LLM residual streams? Spun off from llmoji-experiment (2026-05-15)."
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 license = "CC-BY-SA-4.0"
 license-files = ["LICENSE"]
 authors = [{ name = "a9lim", email = "mx@a9l.im" }]
-# The shared hidden-state engine (model registry, capture, sidecar IO,
-# the quadrant taxonomy) lives in `llmoji-experiment`, which is not on PyPI.
-# Install it editable first — see README "Reproducing". Published deps:
+# Workspace-shared model metadata, capture, sidecar IO, and taxonomy live in
+# the root `transformer-experiments` package. Install the root editable first.
 dependencies = [
+    "transformer-experiments>=0.1,<0.2",
     "llmoji>=2.0,<3",
     "saklas>=1.4.6",
     "numpy",

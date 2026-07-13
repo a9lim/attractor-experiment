@@ -22,7 +22,7 @@ on them too.
 
 from __future__ import annotations
 
-from llmoji_experiment.emotional_prompts import EmotionalPrompt
+from transformer_experiments.kaomoji.emotional_prompts import EmotionalPrompt
 
 
 ARCHAIC_PROMPTS: list[EmotionalPrompt] = [

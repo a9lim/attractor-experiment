@@ -38,8 +38,8 @@ import numpy as np
 import pandas as pd
 
 from attractor_experiment.config import DATA_DIR, FIGURES_DIR  # noqa: E402
-from llmoji_experiment.hidden_state_io import load_hidden_states  # noqa: E402
-from llmoji_experiment.quadrants import QUADRANT_COLORS  # noqa: E402
+from transformer_experiments.hidden_state_io import load_hidden_states  # noqa: E402
+from transformer_experiments.kaomoji.quadrants import QUADRANT_COLORS  # noqa: E402
 
 # Reuse the centroid-building plumbing from trajectory.py (was 02b).
 from attractor_experiment import trajectory as _aa  # noqa: E402

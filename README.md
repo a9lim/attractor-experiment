@@ -6,10 +6,10 @@ hidden-state space, defined by saturated *structural form* rather than
 affective content, that long free-form generations fall into and lock
 onto across model families, content domains, and post-training regimes.
 
-Spun off from [`llmoji-experiment`](https://github.com/a9lim/llmoji-experiment) on
-2026-05-15. That repo asks whether kaomoji choice tracks emotional
-functional state; this one asks about the basin. The two share the
-hidden-state capture engine but the research questions are orthogonal.
+Spun off from [`llmoji-experiment`](https://github.com/a9lim/llmoji-experiment)
+on 2026-05-15. That repo asks whether kaomoji choice tracks emotional
+functional state; this one asks about the basin. Both independently consume
+the workspace-root shared infrastructure.
 
 This is a research repo, not a library. No public API, no PyPI release,
 no broad test suite. The useful surfaces are the data, scripts, figures,
@@ -35,14 +35,12 @@ Live numbers: [`docs/findings.md`](docs/findings.md).
 
 ## Reproducing
 
-The shared engine lives in `llmoji-experiment` (model registry, capture,
-sidecar IO, quadrant taxonomy). Install it editable first:
+Install the workspace-root shared package, then this experiment:
 
 ```bash
 python --version  # system Python 3.12
-pip install -e ../../llmoji        # contributor package (taxonomy)
-pip install -e ../llmoji-experiment  # shared hidden-state engine
-pip install -e .
+python -m pip install -e ..
+python -m pip install -e .
 ```
 
 Emit attractor trajectories, then analyse:
@@ -67,8 +65,8 @@ The reusable analysis libraries (`trajectory`, `centroids`,
 
 ## Related
 
-- [`llmoji-experiment`](https://github.com/a9lim/llmoji-experiment): the kaomoji
-  research repo; provides the shared hidden-state engine.
+- [`llmoji-experiment`](https://github.com/a9lim/llmoji-experiment): related
+  kaomoji introspection research; not a runtime dependency.
 - [`saklas`](https://github.com/a9lim/saklas): activation steering and
   trait monitoring engine.
 

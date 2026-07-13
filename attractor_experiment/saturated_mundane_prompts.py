@@ -67,7 +67,7 @@ v1 — initial 20-prompt Sm set. Topics chosen to be maximally mundane
 
 from __future__ import annotations
 
-from llmoji_experiment.emotional_prompts import EmotionalPrompt
+from transformer_experiments.kaomoji.emotional_prompts import EmotionalPrompt
 
 
 SATURATED_MUNDANE_PROMPTS: list[EmotionalPrompt] = [

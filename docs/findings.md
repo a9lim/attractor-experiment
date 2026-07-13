@@ -4,8 +4,8 @@ Current results worth citing. This consolidates the 2026-05-09 →
 2026-05-15 pilot series (bliss-attractor promotion, attractor-trajectory
 pilot, base-vs-instruct test, talkie-1930 corpus extension, two-bot
 pilots, continuation-basis re-analysis, form-content factorial, basin
-steering). The chronological lab-notebook for that series is in
-`llmoji-experiment`'s git history; it was not carried into this repo.
+steering). This document is the self-contained record of the conclusions that
+remain live after that series.
 
 Before designing a new basin analysis, read [`pitfalls.md`](pitfalls.md)
 — the basis question and the rendering confound have each invalidated a

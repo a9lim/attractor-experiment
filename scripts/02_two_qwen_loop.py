@@ -81,7 +81,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from saklas import SamplingConfig, SaklasSession  # noqa: E402
 
-from llmoji_experiment.capture import (  # noqa: E402
+from transformer_experiments.kaomoji.capture import (  # noqa: E402
     _compose_logit_bias,
     _decode_byte_encoded_text,
 )
@@ -91,8 +91,8 @@ from attractor_experiment.config import (  # noqa: E402
     TEMPERATURE,
     resolve_model,
 )
-from llmoji_experiment.hidden_capture import read_after_generate  # noqa: E402
-from llmoji_experiment.hidden_state_io import (  # noqa: E402
+from transformer_experiments.hidden_capture import read_after_generate  # noqa: E402
+from transformer_experiments.hidden_state_io import (  # noqa: E402
     SidecarWriter,
     hidden_state_path,
 )

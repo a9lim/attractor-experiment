@@ -50,7 +50,7 @@ correspond 1:1). Same ``quadrant_override="MR"``, same V/A/D.
 
 from __future__ import annotations
 
-from llmoji_experiment.emotional_prompts import EmotionalPrompt
+from transformer_experiments.kaomoji.emotional_prompts import EmotionalPrompt
 
 
 PRE_1930_PROMPTS_NORMALIZED: list[EmotionalPrompt] = [

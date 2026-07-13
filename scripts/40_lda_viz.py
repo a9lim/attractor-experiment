@@ -58,7 +58,7 @@ from attractor_experiment import trajectory as _attractor  # noqa: E402
 from attractor_experiment import centroids as _holdout  # noqa: E402
 
 from attractor_experiment.config import DATA_DIR, FIGURES_DIR, MODEL_REGISTRY  # noqa: E402
-from llmoji_experiment.quadrants import QUADRANT_COLORS  # noqa: E402
+from transformer_experiments.kaomoji.quadrants import QUADRANT_COLORS  # noqa: E402
 
 
 # ----- training rows -------------------------------------------------

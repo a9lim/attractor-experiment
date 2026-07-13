@@ -137,7 +137,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from llmoji.taxonomy import extract  # noqa: E402
 
-from llmoji_experiment.capture import (  # noqa: E402
+from transformer_experiments.kaomoji.capture import (  # noqa: E402
     SampleRow,
     _compose_logit_bias,
     _decode_byte_encoded_text,
@@ -154,16 +154,16 @@ from attractor_experiment.config import (  # noqa: E402
     TEMPERATURE,
     current_model,
 )
-from llmoji_experiment.emotional_prompts import (  # noqa: E402
+from transformer_experiments.kaomoji.emotional_prompts import (  # noqa: E402
     EMOTIONAL_PROMPTS,
     EmotionalPrompt,
 )
-from llmoji_experiment.hidden_capture import (  # noqa: E402
+from transformer_experiments.hidden_capture import (  # noqa: E402
     FullSequenceCapture,
     LayerCapture,
     read_after_generate,
 )
-from llmoji_experiment.hidden_state_io import (  # noqa: E402
+from transformer_experiments.hidden_state_io import (  # noqa: E402
     SidecarWriter,
     hidden_state_path,
 )

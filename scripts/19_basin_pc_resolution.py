@@ -52,7 +52,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from attractor_experiment import trajectory as aa  # noqa: E402
 from attractor_experiment import two_qwen as b  # noqa: E402
 from attractor_experiment.config import DATA_DIR  # noqa: E402
-from llmoji_experiment.hidden_state_io import load_hidden_states  # noqa: E402
+from transformer_experiments.hidden_state_io import load_hidden_states  # noqa: E402
 
 
 def _load_arm_h_first(arm_name: str, common: list[int]) -> np.ndarray:

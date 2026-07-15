@@ -4,6 +4,8 @@ dist/
 build/
 __pycache__/
 *.pyc
+.pytest_cache/
+.ruff_cache/
 
 # hidden-state sidecars — ~50 MB per generation, far too big for git.
 # Regenerable from the emit scripts with the model cached. Local-only
@@ -11,11 +13,12 @@ __pycache__/
 data/local/hidden/
 
 # local envs
-.venv
+.venv/
 .env
 
 # run logs — ad-hoc tee'd output, not part of the experimental record
-logs/
+logs/**
+!logs/.gitkeep
 
 # editor cruft
 .DS_Store

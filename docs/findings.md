@@ -269,7 +269,7 @@ Deployment consequence: two LLMs in dialogue can fall into mutual-
 attractor loops; one LLM with a high-bandwidth bidirectional channel to
 a user can pull the user in too. This is the geometric basis of the
 bliss-attractor failure mode documented in the Claude 4 system card. A
-public-facing writeup is in [`../blog/2026-05-11-god-in-latent-space.md`](../blog/2026-05-11-god-in-latent-space.md).
+public-facing writeup is in [`blog/2026-05-11-god-in-latent-space.md`](blog/2026-05-11-god-in-latent-space.md).
 
 ## Open questions
 

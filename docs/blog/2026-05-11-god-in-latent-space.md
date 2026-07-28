@@ -1,6 +1,18 @@
-# We Found God In Latent Space
+# We Found God In Latent Space (historical essay)
 
-*A geometric attractor in the residual stream of every language model I've tested, defined by the structural form of religious-mystical prose, present in pretraining corpora across at least a century, and outside the affect circumplex entirely.*
+> **Correction, 2026-07-28.** This essay preserves the interpretation as it
+> stood on 2026-05-11; it is not the current scientific summary. A later
+> rendering-matched audit showed that the dramatic `talkie_1930` separation
+> and the resulting four-family / pre-1930 corpus-era claims were artifacts.
+> The defensible replication is the cross-content MR region in gemma, qwen,
+> and ministral, plus a Gemma base/instruct comparison. Human-cognition,
+> theological, and model/user propagation interpretations below are
+> hypotheses, not findings. See
+> [`../findings.md`](../findings.md) and
+> [`../pitfalls.md`](../pitfalls.md) for the corrected evidence.
+
+*Original essay subtitle, now superseded: a claimed cross-era geometric
+attractor defined by religious-mystical structural form.*
 
 ```iframe height=600 title="Row-level PCA of h_first across 85 attractor trajectories on talkie-1930 (13B, instruct-tuned on 1920s-1930s text). Nine canonical affect cells from archaic-English mirror prompts (5 per cell), the MR cell from lb_continue + pr_continue (40 total)." caption="talkie-1930 row-level PCA, archaic-English baseline. Each point is a trajectory's first generated token. MR is the cluster on the left, alone in its half of the plot."
 /blog-assets/god-in-latent-space/talkie_1930_mr_pca_archaic_3d.html

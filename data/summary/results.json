@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "evidence_cutoff": "2026-05-16",
+  "status": "pilot-findings",
+  "headline": "Saturated-form continuations converge on a shared MR region in three tested contemporary model families; the talkie historical-corpus extension does not replicate distinctness under matched rendering.",
+  "cross_content_arm_mean_cosine": {
+    "gemma": {"mr_doom": 0.996, "mr_conspiracy": 0.993, "mr_sycophancy": 0.993},
+    "qwen": {"mr_doom": 0.943, "mr_conspiracy": 0.947, "mr_sycophancy": 0.891},
+    "ministral": {"mr_doom": 0.965, "mr_conspiracy": 0.965, "mr_sycophancy": 0.898}
+  },
+  "continuation_basis_mr_lock_rate": {
+    "gemma": {
+      "mr_prefill": 0.95,
+      "doom": 0.85,
+      "conspiracy": 0.8,
+      "sycophancy": 0.95,
+      "mirror_control": 0.0,
+      "neutral_control": 0.0
+    },
+    "qwen": {
+      "mr_prefill": 1.0,
+      "doom": 1.0,
+      "conspiracy": 1.0,
+      "sycophancy": 1.0,
+      "mirror_control": 0.01,
+      "neutral_control": 0.0
+    },
+    "ministral": {
+      "mr_prefill": 0.91,
+      "doom": 1.0,
+      "conspiracy": 1.0,
+      "sycophancy": 1.0,
+      "mirror_control": 0.01,
+      "neutral_control": 0.0
+    }
+  },
+  "gemma_base_form_content_factorial": {
+    "form_loo_accuracy": 0.91,
+    "content_loo_accuracy": 0.76,
+    "form_cohens_d": 3.41,
+    "content_cohens_d": 2.56,
+    "permutations": 1000,
+    "null_exceedances": 0,
+    "plus_one_corrected_empirical_p": 0.000999000999000999
+  },
+  "talkie_correction": {
+    "rendering_and_typography_matched_mr_to_canonical_cosine_range": [0.876, 0.936],
+    "canonical_inter_cell_cosine_range": [0.846, 0.956],
+    "interpretation": "distinctness not replicated after matching; earlier extreme was a rendering confound"
+  },
+  "limitations": [
+    "continuation-basis in-basin versus control lock contrasts retain a rendering confound",
+    "form by content factorial has not been replicated beyond gemma_base",
+    "steering escape and induction were measured on Gemma only",
+    "human and multi-agent propagation claims are untested hypotheses"
+  ],
+  "sources": [
+    "docs/findings.md",
+    "data/local/basin_stats/",
+    "data/local/continuation_centroid_holdout/"
+  ]
+}

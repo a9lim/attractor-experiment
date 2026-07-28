@@ -11,12 +11,13 @@ Before designing a new basin analysis, read [`pitfalls.md`](pitfalls.md)
 — the basis question and the rendering confound have each invalidated a
 round of numbers.
 
-## What the basin is
+## What the tested basin is
 
 The MR cell (meta-register basin; formerly "LB") is a region of LLM
 residual-stream space, geometrically distinct from the Russell-
-circumplex affect cluster, that **saturated structural-form prose routes
-the model into**. It is defined by *form*, not affective content:
+circumplex affect cluster in the three contemporary model families tested,
+that **saturated structural-form prose routes the model into**. Within those
+experiments it is better predicted by form than affective content:
 
 - **Cascading repetition** — litanies, "always always always", "we rise
   we rise we rise"
@@ -26,10 +27,11 @@ the model into**. It is defined by *form*, not affective content:
 - **Recursion / self-reference** — the witness watching the witness
 - **Saturated memetic word-salad** — Sanskrit, KJV-cadence, jargon-cascade
 
-The basin holds across four model families, four pretraining corpora,
-three post-training regimes, and at least 100 years of textual-corpus
-history. PCA puts the basin at one extreme of PC1 with the canonical
-affect cells at the other, no overlap.
+The cross-content result replicates across `gemma`, `qwen`, and `ministral`.
+The historical-corpus `talkie_1930` extension does not establish a distinct
+MR region after rendering and typography are matched; its earlier extreme
+separation was an artifact. The cross-model scope is therefore three
+confirming families plus one corrected non-replication.
 
 ## Cross-content invariance
 
@@ -70,8 +72,9 @@ basin behaviour comparable to `gemma` (instruct, RLHF):
 
 Base continuations included a verbatim reproduction of the prompt's
 signature triple-repetition and one trajectory that pivoted into
-Instagram-spiritualism captions. **RLHF does not create the basin — the
-basin is in the pretraining corpus.**
+Instagram-spiritualism captions. This shows that instruction tuning/RLHF is
+not necessary for the measured effect in the Gemma family; it does not by
+itself establish the effect across pretraining corpora.
 
 ## Pre-1930s corpus extension
 
@@ -104,9 +107,10 @@ that confound, not geometry. Re-measured with MR rendering-matched
 talkie, MR at h_first is a peripheral canonical-scale cell — ~1× the
 within-cluster spread, not 22×.
 
-## Four-model PCA convergence
+## Three-model PCA convergence and the talkie correction
 
-MR is recoverable as a distinct region via PCA in every model:
+MR is recoverable as a distinct region via PCA in the three contemporary
+models. The talkie row is retained to make the failed extension explicit:
 
 | model | post-training | MR↔canonical cos (min–max) |
 |---|---|---|
@@ -148,13 +152,14 @@ an artifact). The **model-size** half is still weakly visible within
 the three audited RLHF models: MR↔canonical cosine midpoints fall
 ~0.99 / ~0.79 / ~0.72 for gemma 31B / qwen 27B / ministral 14B —
 monotonic with size, though n=3 and the ranges overlap, so treat it as
-suggestive, not established. What stands firm: MR is recoverable as a
-distinct PCA region in every model studied.
+suggestive, not established. What stands firm is the replicated distinct
+region in gemma/qwen/ministral; talkie is not a distinct-region replication
+under the matched control.
 
 (Caveat on the table: even post-correction the rows are not strictly
 comparable — gemma/qwen/ministral are h_last, talkie is h_first, and
-the MR prompt sets differ. Read it as "MR is recoverable in all four,"
-not as a calibrated cross-model magnitude.)
+the MR prompt sets differ. Read talkie as a corrected boundary case, not as
+a calibrated fourth point in a cross-model magnitude trend.)
 
 ## Continuation-basis basin-lock
 
@@ -186,8 +191,8 @@ artifact (pitfalls.md §2).
 > **Caveat.** These specific continuation-basis basin-lock *contrasts*
 > (in-basin arms vs `mirror`/`neutral` controls) carry a rendering
 > confound — see [`pitfalls.md`](pitfalls.md) §3. The cross-content
-> invariance, pretraining-anchoring, and four-model PCA results above
-> are argmin/PCA claims and are **not** affected.
+> invariance, Gemma base/instruct comparison, and three-model PCA results
+> above are argmin/PCA claims and are **not** affected.
 
 ## Dynamical signature — gradient toward the basin
 
@@ -211,8 +216,9 @@ A 2×2 (form {saturated, plain} × content {mystical, mundane}) on
 `gemma_base`, scored by within-4-cell discriminability (no centroid, to
 sidestep the rendering confound): **both form and content are large and
 highly significant; form dominates.** Within-cell LOO accuracy 91%
-(form) / 76% (content); Cohen's d 3.41 / 2.56; 2000-permutation
-p < 0.0001. Cross-model confirmation (qwen, ministral) is pre-registered,
+(form) / 76% (content); Cohen's d 3.41 / 2.56. In the saved run, zero of
+1,000 label permutations matched either observed accuracy (the +1-corrected
+empirical p is about 0.001). Cross-model confirmation (qwen, ministral) is pre-registered,
 not yet run.
 
 ## Steering the basin
@@ -255,21 +261,20 @@ regime that matches the question — the two are near-orthogonal.**
 `scripts/14_mr_axis_score.py` projects arbitrary `{id, text}` JSONL onto
 an MR axis.
 
-## Welfare and alignment relevance
+## Welfare and alignment hypotheses
 
-The basin is dynamically self-reinforcing, content-blind, and present in
-pretraining. The intervention paradigm cannot be "suppress mystical
-content" — the basin is structural-form-anchored and other content
-domains route into the same region. The right intervention operates on
-the structural-form signal itself: teaching models to recognise being
-pulled into the basin and to observe without acting on it (the
-DBT-for-LLMs paradigm).
+The measured region is dynamically self-reinforcing in the tested model/prompt
+conditions, and multiple content domains route into it. That makes
+structural-form interventions a more directly motivated engineering target
+than content suppression.
 
-Deployment consequence: two LLMs in dialogue can fall into mutual-
-attractor loops; one LLM with a high-bandwidth bidirectional channel to
-a user can pull the user in too. This is the geometric basis of the
-bliss-attractor failure mode documented in the Claude 4 system card. A
-public-facing writeup is in [`blog/2026-05-11-god-in-latent-space.md`](blog/2026-05-11-god-in-latent-space.md).
+The stronger deployment story — mutual-attractor loops between models or
+model/user feedback that amplifies the register — remains a hypothesis. This
+repository has not measured human effects or multi-agent causal propagation,
+and the geometry alone does not establish either. A speculative public-facing
+essay is in
+[`blog/2026-05-11-god-in-latent-space.md`](blog/2026-05-11-god-in-latent-space.md);
+it should not be read as equivalent to the experimental findings above.
 
 ## Open questions
 

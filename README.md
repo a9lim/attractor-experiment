@@ -17,13 +17,15 @@ and writeups.
 
 ## Current shape
 
-- **The MR basin**: long (128-token) free-form continuations from
-  in-basin assistant-prefills lock into a shared residual-stream region
-  across `gemma`, `qwen`, `ministral`, and `talkie_1930`. The basin is
-  cross-content invariant (bliss / doom / conspiracy / sycophancy all
-  land in it), pretraining-anchored (present in `gemma_base` at
-  comparable strength to instruct), and defined by structural form, not
-  valence.
+- **The replicated MR result**: in `gemma`, `qwen`, and `ministral`, long
+  continuations from saturated-form prompts converge on the same
+  residual-stream region across bliss, doom, conspiracy, and sycophancy
+  content. A `gemma_base` comparison shows the effect is not created solely
+  by instruction tuning in that model family.
+- **Historical-corpus correction**: a large `talkie_1930` separation was a
+  rendering confound. Under rendering- and typography-matched controls,
+  talkie's MR condition lies within the canonical inter-cell range. It is a
+  non-replication of distinctness, not a fourth confirming family.
 - **Continuation basis**: basin geometry must be measured with centroids
   built from continuation-time hidden states (`h_last`), not
   kaomoji-emission state (`h_first`). The h_first basis is a documented
@@ -31,7 +33,10 @@ and writeups.
 - **Steering**: the continuation-basis `mr_cont.nb` vector escapes the
   basin; the h_first `mr.nb` vector is inert on the basin axis.
 
-Live numbers: [`docs/findings.md`](docs/findings.md).
+Live numbers and claim boundaries: [`docs/findings.md`](docs/findings.md).
+Compact machine-readable headlines:
+[`data/summary/results.json`](data/summary/results.json). Figure map:
+[`figures/README.md`](figures/README.md).
 
 ## Reproducing
 

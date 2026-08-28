@@ -43,9 +43,9 @@ Compact machine-readable headlines:
 Install the workspace-root shared package, then this experiment:
 
 ```bash
-python --version  # system Python 3.12
-python -m pip install -e ..
-python -m pip install -e .
+python --version  # shared venv Python 3.12
+uv pip install -e ..
+uv pip install -e .
 ```
 
 Emit attractor trajectories, then analyse:

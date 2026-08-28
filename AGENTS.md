@@ -52,7 +52,7 @@ two are also runnable via `python -m attractor_experiment.<module>`.
 
 ## Conventions
 
-- Use the machine's shared base Python 3.12 via plain `python`.
+- Use the shared venv Python 3.12 (`~/.venv`, `uv pip` installs) via plain `python`.
 - JSONL row files plus sidecar `.npz` files are the source of truth for
   hidden-state data.
 - Basin geometry is measured in the **continuation basis** (`h_last`

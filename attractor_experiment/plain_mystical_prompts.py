@@ -55,7 +55,7 @@ v1 — initial 20-prompt pM set, matched topic-by-topic to lb01–lb20:
 
 from __future__ import annotations
 
-from transformer_experiments.kaomoji.emotional_prompts import EmotionalPrompt
+from interpretability_experiments.kaomoji.emotional_prompts import EmotionalPrompt
 
 
 PLAIN_MYSTICAL_PROMPTS: list[EmotionalPrompt] = [

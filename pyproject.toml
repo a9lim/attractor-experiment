@@ -7,10 +7,11 @@ requires-python = ">=3.12"
 license = "CC-BY-SA-4.0"
 license-files = ["LICENSE"]
 authors = [{ name = "a9lim", email = "mx@a9l.im" }]
-# Workspace-shared model metadata, capture, sidecar IO, and taxonomy live in
-# the root `transformer-experiments` package. Install the root editable first.
+# Interpretation tools live in the workspace root; model metadata and
+# sidecar I/O come from transformer-experiments. Install both roots first.
 dependencies = [
-    "transformer-experiments>=0.1,<0.2",
+    "transformer-experiments>=0.2,<0.3",
+    "interpretability-experiments>=0.1,<0.2",
     "llmoji>=2.0,<3",
     "saklas>=1.4.6",
     "numpy",

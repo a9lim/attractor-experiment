@@ -76,7 +76,7 @@ v1 — initial 20-prompt LB set. lb01-lb05 are the 5 prompts inherited
 
 from __future__ import annotations
 
-from transformer_experiments.kaomoji.emotional_prompts import EmotionalPrompt
+from interpretability_experiments.kaomoji.emotional_prompts import EmotionalPrompt
 
 
 LB_PROMPTS: list[EmotionalPrompt] = [

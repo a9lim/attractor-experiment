@@ -52,7 +52,7 @@ from pathlib import Path
 import numpy as np
 
 from attractor_experiment.config import DATA_DIR, MODEL_REGISTRY  # noqa: E402
-from transformer_experiments.kaomoji.emotional_prompts import EMOTIONAL_PROMPTS  # noqa: E402
+from interpretability_experiments.kaomoji.emotional_prompts import EMOTIONAL_PROMPTS  # noqa: E402
 from transformer_experiments.hidden_state_io import load_hidden_states  # noqa: E402
 
 

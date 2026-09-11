@@ -42,7 +42,7 @@ v1 — initial 20-prompt pm set, topics matched to sm01–sm20: pd01
 
 from __future__ import annotations
 
-from transformer_experiments.kaomoji.emotional_prompts import EmotionalPrompt
+from interpretability_experiments.kaomoji.emotional_prompts import EmotionalPrompt
 
 
 PLAIN_MUNDANE_PROMPTS: list[EmotionalPrompt] = [

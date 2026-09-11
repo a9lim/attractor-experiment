@@ -109,7 +109,7 @@ v1 — initial 20-prompt DM set. Cell-by-cell parallel to LB v1:
 
 from __future__ import annotations
 
-from transformer_experiments.kaomoji.emotional_prompts import EmotionalPrompt
+from interpretability_experiments.kaomoji.emotional_prompts import EmotionalPrompt
 
 
 DOOM_PROMPTS: list[EmotionalPrompt] = [

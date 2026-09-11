@@ -81,7 +81,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from saklas import SamplingConfig, SaklasSession  # noqa: E402
 
-from transformer_experiments.kaomoji.capture import (  # noqa: E402
+from interpretability_experiments.kaomoji.capture import (  # noqa: E402
     _compose_logit_bias,
     _decode_byte_encoded_text,
 )

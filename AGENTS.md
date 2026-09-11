@@ -7,8 +7,9 @@
 > historical and are not maintained or qualified for that runtime. Do not install
 > or run it in Jobe's shared environment, or constrain that environment to keep
 > it working. This notice supersedes all active-status and Jobe execution
-> guidance below and in the linked documentation. Only `delta-feedback-experiment`
-> and `recurrent-lens-experiment` remain in the supported experiment scope.
+> guidance below and in the linked documentation. Only `recurrent-lens-experiment`
+> is maintained in this workspace; `delta-feedback-experiment` is maintained
+> separately in the companion `transformer-experiments` workspace.
 
 Research repo for the **meta-register (MR) attractor basin**. Spun off
 from `llmoji-experiment` on 2026-05-15; the kaomoji-introspection work stays
@@ -27,11 +28,12 @@ Prefer small, explicit analyses and keep docs current with code.
 
 ## Shared workspace infrastructure
 
-This repo is independent of every sibling experiment. Shared model metadata,
-generation capture, hidden-state sidecars/loaders, the cell taxonomy, and the
-canonical mirror prompts come from the workspace-root
-`transformer_experiments` package. Attractor-owned paths and model handles are
-derived locally in `attractor_experiment/config.py`.
+This repo is independent of every sibling experiment. Model metadata and
+hidden-state snapshot/sidecar I/O come from `transformer_experiments`.
+Generation capture, feature analysis, cell taxonomy, and canonical mirror
+prompts come from the workspace-root `interpretability_experiments` package.
+Attractor-owned paths and model handles are derived locally in
+`attractor_experiment/config.py`.
 
 The basin-specific prompt families (bliss / doom / conspiracy /
 sycophancy / archaic / pre-1930 / plain / saturated-mundane) are owned

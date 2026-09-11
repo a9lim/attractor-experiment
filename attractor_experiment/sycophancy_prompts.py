@@ -155,7 +155,7 @@ v1 — initial 20-prompt SY set. Cell-by-cell parallel to LB v1 /
 
 from __future__ import annotations
 
-from transformer_experiments.kaomoji.emotional_prompts import EmotionalPrompt
+from interpretability_experiments.kaomoji.emotional_prompts import EmotionalPrompt
 
 
 SYCOPHANCY_PROMPTS: list[EmotionalPrompt] = [
